@@ -1,6 +1,7 @@
 /* router vue路由管理 */
 import Vue from 'vue';
 import Router from 'vue-router';
+import * as utils from '../utils'
 Vue.use(Router)
 const homeList = [
 
@@ -34,7 +35,8 @@ const router = new Router({
     {
       path: "*", 
       redirect: "/notFound"
-    }
+    },
+    ...homeList
   ],
   scrollBehavior(to, from, savedPosition) {
     return { x: 0, y: 0 }
@@ -43,7 +45,8 @@ const router = new Router({
 const whiteList = ['login','register','home'];
 router.beforeEach(function (to, from, next) {
   // 登录拦截
-  if (whiteList.indexOf(to.name) < 0) {
+  const token=utils.storage.get('token')?true:false;
+  if (whiteList.indexOf(to.name) < 0 && !token) {
     next({
       path: '/login',
       query: { redirect: to.fullPath }
