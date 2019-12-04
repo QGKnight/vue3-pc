@@ -1,7 +1,7 @@
 /* router vue路由管理 */
 import Vue from 'vue';
 import Router from 'vue-router';
-import * as utils from '../utils'
+import * as utils from './utils'
 Vue.use(Router)
 const homeList = [
 
@@ -35,8 +35,7 @@ const router = new Router({
     {
       path: "*", 
       redirect: "/notFound"
-    },
-    ...homeList
+    }
   ],
   scrollBehavior(to, from, savedPosition) {
     return { x: 0, y: 0 }

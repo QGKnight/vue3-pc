@@ -3,16 +3,16 @@ import { Message, Loading } from 'element-ui';
 import * as utils from '../utils'
 import router from '../router'
 
-let loading        //定义loading变量
+let loading;
 
-function startLoading() {    //使用Element loading-start 方法
+function startLoading() {    
     loading = Loading.service({
         lock: true,
         text: '加载中...',
         background: 'rgba(0, 0, 0, 0.7)'
     })
 }
-function  () {    //使用Element loading-close 方法
+function endLoading() {    
     loading.close()
 }
 axios.defaults.timeout = 5000;
