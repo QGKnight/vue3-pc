@@ -38,13 +38,13 @@ module.exports = {
     },
     devServer: {
         open: true,
-        host: '192.168.0.157',
+        host: '192.168.0.150',
         port: 8080,
         https: false,
         hotOnly: false,
         proxy: { // 配置跨域
             '/api': {
-                target: 'http://game.miaoqu1.com/cat_oa',
+                target: 'https://www.tianqiapi.com/api/',
                 ws: true,
                 changOrigin: true,
                 pathRewrite: {

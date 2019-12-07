@@ -1,4 +1,5 @@
 import Bus from 'vue'
+import { Loading } from 'element-ui';
 export default {
     install(Vue, options) {
         // 全局Bus
