@@ -14,11 +14,11 @@
             <img src="../assets/home/new/logo.png" alt />
           </div>
           <div class="right">
-            <div class="register">
+            <div class="register" @click="jumpTo('/register')">
               <img src="../assets/home/new/register.png" alt />
               <span>注册</span>
             </div>
-            <div class="login">
+            <div class="login" @click="jumpTo('/login')">
               <img src="../assets/home/new/login.png" alt />
               <span>登录</span>
             </div>
@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <div class="nav">
+    <div id="nav" class="nav" :class="{'is_fixed' : isFixed}">
       <div class="main-auto nav-main">
         <div class="cell">
           <router-link :class="{actived:$route.name == 'index'}" to="/home/index">首 页</router-link>
@@ -35,7 +35,7 @@
           <router-link :class="{actived:$route.name == 'property'}" to="/home/property">产权信息</router-link>
         </div>
         <div class="cell">
-          <router-link to="/home/property">成交公告</router-link>
+          <router-link :class="{actived:$route.name == 'deal'}" to="/home/deal">成交公告</router-link>
         </div>
         <div class="cell">
           <router-link to="/home/property">交易指南</router-link>
@@ -55,9 +55,17 @@
         <div class="cell">
           <router-link to="/home/property">联系我们</router-link>
         </div>
+        <div class="cell">
+          <router-link to="/home/property">个人中心</router-link>
+        </div>
       </div>
     </div>
-    <router-view />
+    <div class="main" :class="{margined: isFixed}">
+      <keep-alive>
+        <router-view v-if="$route.meta.keepAlive" />
+      </keep-alive>
+      <router-view v-if="!$route.meta.keepAlive" />
+    </div>
     <div class="footer"></div>
   </div>
 </template>
@@ -69,6 +77,9 @@ export default {
   components: { swiper, swiperSlide },
   data() {
     return {
+      isShow:0,
+      isFixed: false,
+      offsetTop: 0,
       swiperOption: {
         observer: true,
         observeParents: true,
@@ -96,12 +107,29 @@ export default {
       ]
     };
   },
+  mounted() {
+    window.addEventListener("scroll", this.initHeight);
+    this.$nextTick(() => {
+      this.offsetTop = document.querySelector("#nav").offsetTop;
+    });
+  },
   methods: {
+    
+    initHeight() {
+      var scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      this.isFixed = scrollTop > this.offsetTop ? true : false;
+    },
     remove() {
       let token = this.$store.state.token;
       console.log(token);
       this.$store.dispatch("logout");
     }
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.initHeight);
   }
 };
 </script>
@@ -196,7 +224,10 @@ export default {
           font-size: 18px;
           font-weight: 500;
           color: rgba(18, 18, 18, 1);
-          margin: 0 35px;
+          margin: 0 28px;
+        }
+        a:hover{
+          color:#FA970A;
         }
         .actived {
           color: #015293;
@@ -213,12 +244,25 @@ export default {
           }
         }
       }
+      .wordColor{
+        color:red;
+      }
+      
     }
+  }
+  .is_fixed {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+  }
+  .margined {
+    margin-top: 110px;
   }
   .footer {
     width: 100%;
     height: 248px;
     background: rgba(1, 82, 147, 1);
+    margin-top: 57px;
   }
 }
 </style>

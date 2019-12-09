@@ -168,15 +168,39 @@
           <img src="../assets/home/new/news.png" alt />
           <span>交易流程</span>
         </div>
-        <div class="cell" v-for="item in 7">
+        <div class="cell">
           <img src="../assets/home/new/baoming.png" alt />
           <span>报名登记</span>
+        </div>
+        <div class="cell">
+          <img src="../assets/home/new/baoming.png" alt />
+          <span>项目受理</span>
+        </div>
+        <div class="cell">
+          <img src="../assets/home/new/baoming.png" alt />
+          <span>项目挂牌</span>
+        </div>
+        <div class="cell">
+          <img src="../assets/home/new/baoming.png" alt />
+          <span>组织交易</span>
+        </div>
+        <div class="cell">
+          <img src="../assets/home/new/baoming.png" alt />
+          <span>成交确认</span>
+        </div>
+        <div class="cell">
+          <img src="../assets/home/new/baoming.png" alt />
+          <span>合同签订</span>
+        </div>
+        <div class="cell">
+          <img src="../assets/home/new/baoming.png" alt />
+          <span>交易鉴证</span>
         </div>
       </div>
       <div class="core projects">
         <div class="left">
           <div class="tip">
-            <img src="../assets/home/new/news.png" alt />
+            <img src="../assets/home/new/zhanshi.png" alt />
             <span>项目展示</span>
           </div>
           <div class="more">
@@ -233,7 +257,7 @@
                 <td>老里村</td>
                 <td>2019年12月2日</td>
                 <td>
-                  <span>报名</span>
+                  <span @click="jumpTo('/notice')">报名</span>
                 </td>
               </tr>
             </table>
@@ -241,7 +265,7 @@
         </div>
         <div class="right">
           <div class="tip">
-            <img src="../assets/home/new/map.png" alt />
+            <img src="../assets/home/new/chaxun.png" alt />
             <span>项目查询</span>
           </div>
           <div class="search-main">
@@ -282,6 +306,48 @@
           </div>
         </div>
       </div>
+      <div class="notice">
+        <div class="notice-one">
+          <div class="tip">
+            <img src="../assets/home/new/gonggao.png" alt />
+            <span>通知公告</span>
+          </div>
+          <div class="more">
+            <span>更多</span>
+          </div>
+          <div class="one-main">
+            <div class="cell" v-for="item in 6">
+              <div class="title-left">• 省委副书记视察汝州农村产权交易11111111111111</div>
+              <div>2019-07-15</div>
+            </div>
+          </div>
+        </div>
+        <div class="notice-one">
+          <div class="tip">
+            <img src="../assets/home/new/zhengce.png" alt />
+            <span>政策法规</span>
+          </div>
+          <div class="more">
+            <span>更多</span>
+          </div>
+          <div class="one-main">
+            <div class="cell" v-for="item in 6">
+              <div class="title-left">• 省委副书记视察汝州农村产权交易1111111111</div>
+              <div>2019-07-15</div>
+            </div>
+          </div>
+        </div>
+        <div class="notice-two">
+          <div class="tip">
+            <img src="../assets/home/new/map.png" alt />
+            <span>产权信息发布</span>
+          </div>
+          <div class="two-main">
+            <img src="../assets/home/new/shenbao.png" alt />
+            <img src="../assets/home/new/shenpi.png" alt />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -308,23 +374,23 @@ export default {
       options: [
         {
           value: "选项1",
-          label: "黄金糕"
+          label: "土地"
         },
         {
           value: "选项2",
-          label: "双皮奶"
+          label: "房屋"
         },
         {
           value: "选项3",
-          label: "蚵仔煎"
+          label: "池塘"
         },
         {
           value: "选项4",
-          label: "龙须面"
+          label: "耕地"
         },
         {
           value: "选项5",
-          label: "北京烤鸭"
+          label: "山地"
         }
       ]
     };
@@ -335,6 +401,7 @@ export default {
   },
   mounted() {
     setInterval(this.showMarquee, 5000);
+    let str="2019-08-09";
   },
   methods: {
     onMap(num) {
@@ -475,6 +542,7 @@ export default {
       }
     }
     .core {
+      width: 1285px;
       margin-top: 30px;
       display: flex;
       justify-content: space-between;
@@ -588,11 +656,13 @@ export default {
               .cell {
                 display: flex;
                 justify-content: space-between;
-                font-size: 14px;
-                font-family: PingFang SC;
-                font-weight: 500;
-                color: rgba(102, 102, 102, 1);
                 line-height: 28px;
+                span {
+                  font-size: 14px;
+                  font-family: PingFang SC;
+                  font-weight: 500;
+                  color: rgba(102, 102, 102, 1);
+                }
               }
             }
           }
@@ -600,10 +670,11 @@ export default {
       }
       .right {
         border-top: 2px solid rgba(1, 82, 147, 1);
-        box-sizing: border-box;
+
         width: 412px;
         height: 360px;
-        background: rgba(255, 255, 255, 1);
+        background: #fff;
+        box-shadow: 0px 2px 20px 0px rgba(194, 194, 194, 0.2);
         position: relative;
         .tip {
           position: absolute;
@@ -637,6 +708,7 @@ export default {
       margin-top: 41px;
       width: 1135px;
       height: 180px;
+
       background: rgba(255, 255, 255, 1);
       box-shadow: 0px 2px 20px 0px rgba(194, 194, 194, 0.2);
       display: flex;
@@ -798,6 +870,7 @@ export default {
           .btns {
             width: 263px;
             height: 31px;
+            line-height: 31px;
             background: rgba(1, 82, 147, 1);
             border-radius: 5px;
             font-size: 16px;
@@ -805,6 +878,105 @@ export default {
             font-weight: 500;
             color: rgba(255, 255, 255, 1);
             margin: 20px auto 0;
+          }
+        }
+      }
+    }
+    .notice {
+      margin-top: 45px;
+      display: flex;
+      flex-direction: row;
+      div {
+        position: relative;
+        .tip {
+          position: absolute;
+          top: -7px;
+          left: 0;
+          width: 170px;
+          height: 35px;
+          line-height: 50px;
+          background: url("../assets/home/new/tip.png") no-repeat;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            margin-right: 9px;
+          }
+          span {
+            font-size: 18px;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 1);
+          }
+        }
+        .more {
+          width: 100%;
+          text-align: right;
+          height: 30px;
+          line-height: 30px;
+          span {
+            margin-right: 12px;
+            font-size: 14px;
+            font-family: PingFang SC;
+            font-weight: 500;
+            color: rgba(153, 153, 153, 1);
+            line-height: 28px;
+          }
+        }
+      }
+      .notice-one {
+        border-top: 2px solid #015293;
+        width: 398px;
+        height: 228px;
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0px 2px 20px 0px rgba(194, 194, 194, 0.2);
+        margin-right: 21px;
+
+        .one-main {
+          width: 345px;
+          padding: 0 25px;
+          margin-top: 12px;
+          .cell {
+            height: 28px;
+            line-height: 28px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            div {
+              font-size: 14px;
+              font-family: PingFang SC;
+              font-weight: 500;
+              color: rgba(102, 102, 102, 1);
+            }
+            .title-left {
+              width: 244px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+            &:last-child {
+              border: none;
+            }
+          }
+        }
+      }
+      .notice-two {
+        border-top: 2px solid #015293;
+        width: 412px;
+        height: 228px;
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0px 2px 20px 0px rgba(194, 194, 194, 0.2);
+        margin-left: 35px;
+        .two-main {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          img {
+            width: 289px;
+            height: 74px;
+            margin-top: 14px;
           }
         }
       }

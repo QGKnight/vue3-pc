@@ -16,13 +16,19 @@ const router = new Router({
           path: '/home/index',
           name: 'index',
           component: resolve => require(['./views/index'], resolve),
-          meta: { title: '首页', keepAlive: false },
+          meta: { title: '首页', keepAlive: true },
         },
         {
           path: '/home/property',
           name: 'property',
           component: resolve => require(['./views/Property'], resolve),
-          meta: { title: '产权信息', keepAlive: false },
+          meta: { title: '产权信息', keepAlive: true },
+        },
+        {
+          path: '/home/deal',
+          name: 'deal',
+          component: resolve => require(['./views/deal'], resolve),
+          meta: { title: '成交公告', keepAlive: true },
         }
       ]
     },
@@ -39,10 +45,22 @@ const router = new Router({
       meta: { title: '注册', keepAlive: false }
     },
     {
+      path: '/forget',
+      name: 'forget',
+      component: resolve => require(['./views/forget'], resolve),
+      meta: { title: '忘记密码', keepAlive: false }
+    },
+    {
       path: "/notFound",
       name: "notFound",
       component: resolve => require(['./views/404'], resolve),
       meta: { title: '404', keepAlive: false }
+    },
+    {
+      path: "/notice",
+      name: "notice",
+      component: resolve => require(['./views/notice'], resolve),
+      meta: { title: '公告详情', keepAlive: false }
     },
     {
       path: "*",
@@ -53,7 +71,7 @@ const router = new Router({
     return { x: 0, y: 0 }
   }
 })
-const whiteList = ['login', 'register', 'home','index','property'];
+const whiteList = ['login', 'register', 'home','index','property','notice','forget','deal'];
 router.beforeEach(function (to, from, next) {
   // 登录拦截
   const token = utils.storage.get('token') ? true : false;

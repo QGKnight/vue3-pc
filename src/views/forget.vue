@@ -14,8 +14,8 @@
       <img src="../assets/auth/login-bg.png" alt />
       <div class="form-box">
         <div class="head">
-          <img src="../assets/auth/add.png" alt />
-          <span>用户注册</span>
+          <img src="../assets/auth/lock.png" alt />
+          <span>找回密码</span>
         </div>
         <div class="cell">
           <img src="../assets/auth/mobile.png" alt />
@@ -24,11 +24,7 @@
         <div class="cell celled">
           <img src="../assets/auth/pass.png" alt />
           <el-input placeholder="请输入验证码" v-model="loginUser.smscode" clearable></el-input>
-          <span @click="handCode">{{getCode}}</span>
-        </div>
-        <div class="cell">
-          <img src="../assets/auth/name.png" alt />
-          <el-input placeholder="请输入真实姓名" v-model="loginUser.name" clearable></el-input>
+          <span>{{getCode}}</span>
         </div>
         <div class="cell">
           <img src="../assets/auth/pass.png" alt />
@@ -36,13 +32,10 @@
         </div>
         <div class="cell">
           <img src="../assets/auth/pass.png" alt />
-          <el-input placeholder="请输入密码" v-model="loginUser.repassword" show-password></el-input>
+          <el-input placeholder="请确认密码" v-model="loginUser.repassword" show-password></el-input>
         </div>
-        <div class="btns">注册</div>
-        <div class="toRegister">
-          已有账号？
-          <span @click="jumpTo('login')">赶紧去登录吧！</span>
-        </div>
+
+        <div class="btns">确 认</div>
       </div>
     </div>
   </div>
