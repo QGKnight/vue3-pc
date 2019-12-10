@@ -38,22 +38,22 @@
           <router-link :class="{actived:$route.name == 'deal'}" to="/home/deal">成交公告</router-link>
         </div>
         <div class="cell">
-          <router-link to="/home/property">交易指南</router-link>
+          <router-link :class="{actived:$route.name == 'guide'}" to="/home/guide">交易指南</router-link>
+        </div>
+        <!-- <div class="cell">
+          <router-link :class="{actived:$route.name == 'policy'}" to="/home/policy">政策法规</router-link>
+        </div> -->
+        <div class="cell">
+          <router-link :class="{actived:$route.name == 'check'}" to="/home/check">图像核对</router-link>
         </div>
         <div class="cell">
-          <router-link to="/home/property">政策法规</router-link>
+          <router-link :class="{actived:$route.name == 'chart'}" to="/home/chart">大数据分析</router-link>
         </div>
         <div class="cell">
-          <router-link to="/home/property">图像核对</router-link>
+          <router-link :class="{actived:$route.name == 'news'}" to="/home/news">新闻资讯</router-link>
         </div>
         <div class="cell">
-          <router-link to="/home/property">大数据分析</router-link>
-        </div>
-        <div class="cell">
-          <router-link to="/home/property">新闻资讯</router-link>
-        </div>
-        <div class="cell">
-          <router-link to="/home/property">联系我们</router-link>
+          <router-link :class="{actived:$route.name == 'contact'}" to="/home/contact">联系我们</router-link>
         </div>
         <div class="cell">
           <router-link to="/home/property">个人中心</router-link>
@@ -224,7 +224,7 @@ export default {
           font-size: 18px;
           font-weight: 500;
           color: rgba(18, 18, 18, 1);
-          margin: 0 28px;
+          margin: 0 35px;
         }
         a:hover{
           color:#FA970A;

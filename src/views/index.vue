@@ -205,6 +205,7 @@
           </div>
           <div class="more">
             <span>更多</span>
+            <img src="../assets/home/new/right.png" alt="">
           </div>
           <div class="projects-main">
             <table>
@@ -314,6 +315,7 @@
           </div>
           <div class="more">
             <span>更多</span>
+            <img src="../assets/home/new/right.png" alt="">
           </div>
           <div class="one-main">
             <div class="cell" v-for="item in 6">
@@ -329,6 +331,7 @@
           </div>
           <div class="more">
             <span>更多</span>
+            <img src="../assets/home/new/right.png" alt="">
           </div>
           <div class="one-main">
             <div class="cell" v-for="item in 6">
@@ -782,12 +785,15 @@ export default {
           height: 30px;
           line-height: 30px;
           span {
-            margin-right: 12px;
+            margin-right: 5px;
             font-size: 14px;
             font-family: PingFang SC;
             font-weight: 500;
             color: rgba(153, 153, 153, 1);
             line-height: 28px;
+          }
+          img{
+            margin-right:12px;
           }
         }
         .projects-main {
@@ -914,12 +920,15 @@ export default {
           height: 30px;
           line-height: 30px;
           span {
-            margin-right: 12px;
+            margin-right: 5px;
             font-size: 14px;
             font-family: PingFang SC;
             font-weight: 500;
             color: rgba(153, 153, 153, 1);
             line-height: 28px;
+          }
+          img{
+            margin-right:12px;
           }
         }
       }

@@ -29,7 +29,44 @@ const router = new Router({
           name: 'deal',
           component: resolve => require(['./views/deal'], resolve),
           meta: { title: '成交公告', keepAlive: true },
+        },
+        {
+          path: '/home/chart',
+          name: 'chart',
+          component: resolve => require(['./views/chart'], resolve),
+          meta: { title: '数据分析', keepAlive: false },
+        },
+        {
+          path: '/home/check',
+          name: 'check',
+          component: resolve => require(['./views/check'], resolve),
+          meta: { title: '图像核对', keepAlive: false },
+        },
+        {
+          path: '/home/guide',
+          name: 'guide',
+          component: resolve => require(['./views/guide'], resolve),
+          meta: { title: '交易指南', keepAlive: false },
+        },
+        {
+          path: '/home/policy',
+          name: 'policy',
+          component: resolve => require(['./views/policy'], resolve),
+          meta: { title: '政策法规', keepAlive: false },
+        },
+        {
+          path: '/home/news',
+          name: 'news',
+          component: resolve => require(['./views/news'], resolve),
+          meta: { title: '新闻资讯', keepAlive: false },
+        },
+        {
+          path: '/home/contact',
+          name: 'contact',
+          component: resolve => require(['./views/contact'], resolve),
+          meta: { title: '联系我们', keepAlive: false },
         }
+
       ]
     },
     {
@@ -71,7 +108,7 @@ const router = new Router({
     return { x: 0, y: 0 }
   }
 })
-const whiteList = ['login', 'register', 'home','index','property','notice','forget','deal'];
+const whiteList = ['contact','login', 'register', 'home','index','property','notice','forget','deal','chart','check','guide','policy','news'];
 router.beforeEach(function (to, from, next) {
   // 登录拦截
   const token = utils.storage.get('token') ? true : false;

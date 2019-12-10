@@ -7,7 +7,8 @@ import 'element-ui/lib/theme-chalk/index.css';
 import axios from './api/http'
 import plugin from './plugin'
 import less from 'less'
-import scroll from 'vue-seamless-scroll' 
+import scroll from 'vue-seamless-scroll'
+
 Vue.use(scroll) 
 Vue.use(less)
 Vue.use(plugin, { router: router })

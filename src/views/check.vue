@@ -15,7 +15,7 @@
     </div>
     <div class="main-auto filter-box">
       <div class="items">
-        <div class="label">项目类型：</div>
+        <div class="label">资产类别：</div>
         <div class="cell">
           <div v-for="item in 13">农村土地经营权</div>
         </div>
@@ -52,35 +52,20 @@
           <img src="../assets/home/new/down.png" alt />
         </div>
       </div>
-      <div class="right" @click="changeItem">
-        <img src="../assets/home/new/fangshi.png" alt />
-        <span>图文排列</span>
+      <div class="right">
       </div>
     </div>
-    <div class="list-main main-auto" v-if="!showFlag">
-      <div class="items" v-for="item in 12">
-        <img src="../assets/404.gif" alt />
-        <div class="msg-main">
-          <div class="title">彭州市生平镇泉村5组、6...</div>
-          <div class="tips">当前价：---</div>
-          <div class="tips">起始价：400.00元</div>
-          <div class="tips">距开始：待定</div>
-          <div class="qian">进行中</div>
-        </div>
-      </div>
-    </div>
-    <div class="lists main-auto" v-if="showFlag">
+    <div class="lists main-auto">
       <div class="list-item">
-        <div>标的名称</div>
-        <div>组织方</div>
-        <div>当前价格</div>
-        <div>竞价状态</div>
+        <div> 项目编号</div>
+        <div>成交名称</div>
+        <div>成交日期</div>
       </div>
       <div class="list-item" v-for="item in 12">
+        <div>23.00元</div>
         <div>彭州市三界方一村10组、11组...</div>
         <div>绵阳市江油市</div>
-        <div>23.00元</div>
-        <div>尚未开始</div>
+        
       </div>
     </div>
     <div class="page-size main-auto">
@@ -293,16 +278,13 @@ export default {
         font-weight: 500;
         color: rgba(18, 18, 18, 1);
         &:nth-child(1) {
-          width: 40%;
+          width: 15%;
         }
         &:nth-child(2) {
-          width: 25%;
+          width: 70%;
         }
         &:nth-child(3) {
           width: 15%;
-        }
-        &:nth-child(4) {
-          width: 20%;
         }
       }
     }
