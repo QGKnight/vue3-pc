@@ -65,6 +65,27 @@ const router = new Router({
           name: 'contact',
           component: resolve => require(['./views/contact'], resolve),
           meta: { title: '联系我们', keepAlive: false },
+        },
+        {
+          path: '/home/info',
+          name: 'info',
+          redirect: "/info/msg",
+          component: resolve => require(['./views/info'], resolve),
+          meta: { title: '个人中心', keepAlive: false },
+          children:[
+            {
+              path: '/info/msg',
+              name: 'info',
+              component: resolve => require(['./views/infos/msg'], resolve),
+              meta: { title: '个人信息', keepAlive: false },
+            },
+            {
+              path: '/info/password',
+              name: 'info',
+              component: resolve => require(['./views/infos/password'], resolve),
+              meta: { title: '登录密码', keepAlive: false },
+            },
+          ]
         }
 
       ]
@@ -100,6 +121,12 @@ const router = new Router({
       meta: { title: '公告详情', keepAlive: false }
     },
     {
+      path: "/upPage",
+      name: "upPage",
+      component: resolve => require(['./views/upPage'], resolve),
+      meta: { title: '产权申报', keepAlive: false }
+    },
+    {
       path: "*",
       redirect: "/notFound"
     }
@@ -108,7 +135,7 @@ const router = new Router({
     return { x: 0, y: 0 }
   }
 })
-const whiteList = ['contact','login', 'register', 'home','index','property','notice','forget','deal','chart','check','guide','policy','news'];
+const whiteList = ['password','msg','info','upPage','contact','login', 'register', 'home','index','property','notice','forget','deal','chart','check','guide','policy','news'];
 router.beforeEach(function (to, from, next) {
   // 登录拦截
   const token = utils.storage.get('token') ? true : false;

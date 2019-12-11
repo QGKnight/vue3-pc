@@ -29,6 +29,17 @@
         </div>
       </div>
     </div>
+    <div class="page-tion">
+      <el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page.sync="currentPage"
+        :page-size="100"
+        layout="prev, pager, next, jumper"
+        :total="1000"
+        background
+      ></el-pagination>
+    </div>
   </div>
 </template>
 <script>
@@ -37,10 +48,18 @@ export default {
   data() {
     return {
       number: "",
-      word: ""
+      word: "",
+      currentPage:5
     };
   },
-  methods: {}
+  methods: {
+    handleSizeChange(val) {
+      console.log(`每页 ${val} 条`);
+    },
+    handleCurrentChange(val) {
+      console.log(`当前页: ${val}`);
+    }
+  }
 };
 </script>
 <style scoped lang="less">
@@ -109,14 +128,14 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height:68px;
+        height: 68px;
         .left {
           .num {
             font-size: 16px;
             font-family: PingFang SC;
             font-weight: 500;
             color: rgba(102, 102, 102, 1);
-            margin-right:62px;
+            margin-right: 62px;
           }
           .tip {
             font-size: 16px;
@@ -132,6 +151,10 @@ export default {
         }
       }
     }
+  }
+  .page-tion{
+    margin-top:48px;
+    text-align: center;
   }
 }
 </style>

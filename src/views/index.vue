@@ -27,16 +27,12 @@
             <div class="main-left">
               <swiper :options="swiperOption">
                 <swiper-slide class="swiper-item">
+                  <img src="../assets/home/new/33.png" alt="">
                   <div>省纪委调研灌南县“三资”管理农村产权交易工作1</div>
                 </swiper-slide>
                 <swiper-slide class="swiper-item">
+                  <img src="../assets/home/new/44.png" alt="">
                   <div>省纪委调研灌南县“三资”管理农村产权交易工作2</div>
-                </swiper-slide>
-                <swiper-slide class="swiper-item">
-                  <div>省纪委调研灌南县“三资”管理农村产权交易工作3</div>
-                </swiper-slide>
-                <swiper-slide class="swiper-item">
-                  <div>省纪委调研灌南县“三资”管理农村产权交易工作4</div>
                 </swiper-slide>
               </swiper>
             </div>
@@ -61,105 +57,22 @@
             <span>地图导航</span>
           </div>
           <div class="map-main">
-            <img src="../assets/home/map.png" usemap="#Map" alt />
-            <map name="Map">
-              <area
-                shape="poly"
-                coords="134, 324, 105, 326, 101, 317, 92, 318, 82, 321, 73, 317, 59, 310, 53, 314, 47, 310, 41, 311, 39, 304, 51, 303, 35, 292, 55, 279, 59, 266, 69, 259, 74, 263, 77, 244, 98, 236, 103, 234, 111, 221, 115, 221, 126, 215, 123, 229, 136, 231, 153, 238, 163, 236, 167, 252, 170, 268, 173, 278, 170, 289, 163, 301"
-                @click="onMap(0)"
-              />
-              <!-- 寄料镇 -->
-              <area
-                shape="poly"
-                coords="135, 325, 149, 326, 157, 322, 163, 318, 159, 314, 174, 308, 181, 307, 192, 310, 206, 304, 220, 303, 227, 303, 243, 296, 242, 289, 234, 280, 241, 274, 246, 264, 234, 259, 232, 247, 221, 246, 211, 244, 201, 248, 197, 248, 187, 253, 181, 248, 181, 244, 180, 239, 174, 237, 165, 240, 168, 253, 171, 265, 172, 276, 172, 288, 166, 297"
-                @click="onMap(1)"
-              />
-              <!-- 蟒穿镇 -->
-              <area
-                shape="poly"
-                coords="246, 294, 244, 301, 256, 304, 269, 300, 280, 308, 292, 309, 304, 309, 312, 300, 320, 301, 325, 301, 331, 297, 339, 299, 344, 293, 353, 291, 351, 281, 333, 267, 325, 264, 294, 245, 263, 224, 258, 218, 255, 212, 251, 216, 246, 225, 245, 237, 252, 246, 247, 249, 239, 248, 233, 249, 234, 256, 245, 263, 244, 269, 239, 282"
-                @click="onMap(2)"
-              />
-              <!-- 小屯镇 -->
-              <area
-                shape="poly"
-                coords="336, 268, 347, 278, 354, 272, 354, 265, 348, 258, 352, 244, 354, 240, 357, 225, 343, 224, 332, 221, 326, 218, 317, 214, 311, 219, 303, 226, 294, 226, 288, 219, 279, 219, 276, 216, 267, 218, 261, 213, 259, 216, 264, 226"
-                @click="onMap(3)"
-              />
-              <!-- 焦村乡 -->
-              <area
-                shape="poly"
-                coords="81, 193, 85, 202, 89, 209, 84, 220, 84, 227, 80, 233, 80, 239, 97, 237, 108, 225, 124, 215, 127, 222, 124, 230, 135, 231, 153, 239, 163, 236, 174, 237, 179, 224, 182, 219, 193, 211, 194, 202, 198, 194, 199, 189, 186, 186, 127, 171, 121, 170, 98, 183"
-                @click="onMap(4)"
-              />
-              <!-- 杨楼镇 -->
-              <area
-                shape="poly"
-                coords="201, 195, 205, 195, 218, 196, 235, 202, 244, 207, 248, 217, 245, 227, 243, 236, 250, 246, 235, 247, 211, 245, 197, 247, 189, 252, 184, 247, 181, 239, 176, 234, 182, 221, 192, 210, 194, 204, 200, 198"
-                href="#"
-              />
-              <!-- 王寨乡 -->
-              <area
-                shape="poly"
-                coords="223, 182, 218, 196, 238, 202, 249, 209, 261, 213, 254, 205, 248, 200, 252, 190, 247, 182, 240, 180, 241, 173, 232, 180"
-                href="#"
-              />
-              <!-- 汝州市 -->
-              <area
-                shape="poly"
-                coords="83, 195, 69, 190, 70, 178, 64, 170, 62, 166, 54, 161, 44, 161, 47, 149, 58, 143, 61, 134, 49, 127, 41, 120, 44, 111, 52, 113, 60, 108, 58, 104, 80, 87, 81, 83, 103, 72, 109, 75, 111, 85, 121, 83, 130, 83, 126, 94, 124, 100, 121, 108, 121, 121, 109, 123, 108, 131, 105, 142, 102, 151, 95, 172, 96, 162, 94, 170, 89, 183, 82, 191"
-                href="#"
-              />
-              <!-- 临汝镇 -->
-              <area
-                shape="poly"
-                coords="109, 131, 116, 135, 122, 136, 116, 143, 123, 144, 125, 155, 124, 171, 108, 176, 97, 186, 86, 190, 95, 160, 105, 143"
-                href="#"
-              />
-              <!-- 温泉镇 -->
-              <area
-                shape="poly"
-                coords="130, 84, 125, 94, 126, 99, 121, 107, 122, 118, 109, 123, 109, 132, 120, 138, 119, 142, 124, 147, 126, 156, 128, 166, 181, 183, 184, 166, 181, 158, 180, 152, 169, 151, 164, 143, 160, 134, 153, 135, 148, 131, 150, 122, 149, 113, 147, 97, 141, 89, 141, 80"
-                href="#"
-              />
-              <!-- 庙下镇 -->
-              <area
-                shape="poly"
-                coords="143, 77, 141, 86, 149, 93, 147, 105, 149, 113, 152, 121, 146, 133, 160, 134, 165, 143, 171, 148, 176, 150, 174, 129, 187, 87, 196, 78, 195, 70, 181, 80, 168, 81"
-                href="#"
-              />
-              <!-- 夏店镇 -->
-              <area
-                shape="poly"
-                coords="176, 149, 172, 129, 186, 87, 198, 79, 206, 79, 217, 75, 228, 78, 242, 92, 235, 100, 248, 100, 258, 101, 269, 100, 265, 114, 276, 127, 270, 130, 259, 132, 249, 130, 242, 138, 235, 144, 226, 147, 210, 145, 192, 150, 182, 155"
-                href="#"
-              />
-              <!-- 岭头镇 -->
-              <area
-                shape="poly"
-                coords="182, 154, 182, 158, 186, 165, 184, 185, 198, 191, 195, 203, 204, 194, 220, 198, 221, 183, 240, 174, 247, 181, 251, 188, 261, 165, 278, 161, 274, 147, 280, 132, 274, 130, 262, 133, 249, 132, 237, 143, 226, 149, 216, 145, 206, 147"
-                href="#"
-              />
-              <!-- 骑岭乡 -->
-              <area
-                shape="poly"
-                coords="280, 134, 272, 143, 275, 151, 279, 157, 262, 167, 252, 187, 248, 203, 257, 210, 262, 217, 275, 216, 286, 219, 298, 228, 307, 220, 314, 213, 333, 221, 328, 205, 347, 186, 336, 176, 327, 149, 317, 141, 309, 144, 308, 139, 288, 140"
-                href="#"
-              />
-              <!-- 米店镇 -->
-              <area
-                shape="poly"
-                coords="328, 152, 336, 176, 344, 177, 346, 185, 329, 204, 331, 217, 340, 223, 350, 222, 360, 225, 366, 218, 375, 211, 387, 209, 391, 200, 398, 196, 407, 182, 368, 173, 361, 166, 347, 163, 342, 158, 338, 153"
-                href="#"
-              />
-              <!-- 纸坊镇 -->
-              <area
-                shape="poly"
-                coords="267, 104, 265, 112, 276, 129, 289, 138, 308, 139, 319, 142, 329, 153, 342, 157, 348, 164, 360, 165, 372, 174, 395, 176, 408, 182, 417, 169, 402, 160, 390, 160, 385, 155, 389, 151, 387, 138, 394, 124, 390, 117, 387, 113, 371, 116, 361, 110, 351, 104, 340, 104, 319, 104, 313, 102, 301, 105, 289, 107"
-                href="#"
-              />
-              <!-- 大浴镇 -->
-            </map>
+            <img class="imgs1" src="../assets/home/map/1.png" :class="{actived:currentIndex==1}" @mouseover="enter(1)" @mouseleave="leave" @click="jumpPage(1)" alt />
+            <img class="imgs2" src="../assets/home/map/2.png" :class="{actived:currentIndex==2}" @mouseover="enter(2)" @mouseleave="leave" @click="jumpPage(2)" alt />
+            <img class="imgs3" src="../assets/home/map/3.png" :class="{actived:currentIndex==3}" @mouseover="enter(3)" @mouseleave="leave" @click="jumpPage(3)" alt />
+            <img class="imgs4" src="../assets/home/map/4.png" :class="{actived:currentIndex==4}" @mouseover="enter(4)" @mouseleave="leave" @click="jumpPage(4)" alt />
+            <img class="imgs5" src="../assets/home/map/5.png" :class="{actived:currentIndex==5}" @mouseover="enter(5)" @mouseleave="leave" @click="jumpPage(5)" alt />
+            <img class="imgs6" src="../assets/home/map/6.png" :class="{actived:currentIndex==6}" @mouseover="enter(6)" @mouseleave="leave" @click="jumpPage(6)" alt />
+            <img class="imgs7" src="../assets/home/map/7.png" :class="{actived:currentIndex==7}" @mouseover="enter(7)" @mouseleave="leave" @click="jumpPage(7)" alt />
+            <img class="imgs8" src="../assets/home/map/8.png" :class="{actived:currentIndex==8}" @mouseover="enter(8)" @mouseleave="leave" @click="jumpPage(8)" alt />
+            <img class="imgs9" src="../assets/home/map/9.png" :class="{actived:currentIndex==9}" @mouseover="enter(9)" @mouseleave="leave" @click="jumpPage(9)" alt />
+            <img class="imgs10" src="../assets/home/map/10.png" :class="{actived:currentIndex==10}" @mouseover="enter(10)" @mouseleave="leave" @click="jumpPage(10)" alt />
+            <img class="imgs11" src="../assets/home/map/11.png" :class="{actived:currentIndex==11}" @mouseover="enter(11)" @mouseleave="leave" @click="jumpPage(11)" alt />
+            <img class="imgs12" src="../assets/home/map/12.png" :class="{actived:currentIndex==12}" @mouseover="enter(12)" @mouseleave="leave" @click="jumpPage(12)" alt />
+            <img class="imgs13" src="../assets/home/map/13.png" :class="{actived:currentIndex==13}" @mouseover="enter(13)" @mouseleave="leave" @click="jumpPage(13)" alt />
+            <img class="imgs14" src="../assets/home/map/14.png" :class="{actived:currentIndex==14}" @mouseover="enter(14)" @mouseleave="leave" @click="jumpPage(14)" alt />
+            <img class="imgs15" src="../assets/home/map/15.png" :class="{actived:currentIndex==15}" @mouseover="enter(15)" @mouseleave="leave" @click="jumpPage(15)" alt />
+            <img class="imgs16" src="../assets/home/map/16.png" :class="{actived:currentIndex==16}" @mouseover="enter(16)" @mouseleave="leave" @click="jumpPage(16)" alt />
           </div>
         </div>
       </div>
@@ -205,7 +118,7 @@
           </div>
           <div class="more">
             <span>更多</span>
-            <img src="../assets/home/new/right.png" alt="">
+            <img src="../assets/home/new/right.png" alt />
           </div>
           <div class="projects-main">
             <table>
@@ -315,7 +228,7 @@
           </div>
           <div class="more">
             <span>更多</span>
-            <img src="../assets/home/new/right.png" alt="">
+            <img src="../assets/home/new/right.png" alt />
           </div>
           <div class="one-main">
             <div class="cell" v-for="item in 6">
@@ -331,7 +244,7 @@
           </div>
           <div class="more">
             <span>更多</span>
-            <img src="../assets/home/new/right.png" alt="">
+            <img src="../assets/home/new/right.png" alt />
           </div>
           <div class="one-main">
             <div class="cell" v-for="item in 6">
@@ -362,6 +275,7 @@ export default {
   components: { swiper, swiperSlide },
   data() {
     return {
+      currentIndex: null,
       word: "",
       activedNum: 0,
       weatherList: [],
@@ -404,48 +318,21 @@ export default {
   },
   mounted() {
     setInterval(this.showMarquee, 5000);
-    let str="2019-08-09";
+    let str = "2019-08-09";
   },
   methods: {
-    onMap(num) {
-      if (num == 0) {
-        console.log(0);
-      } else if (num == 1) {
-        console.log(1);
-      } else if (num == 2) {
-        console.log(2);
-      } else if (num == 3) {
-        console.log(3);
-      } else if (num == 4) {
-        console.log(4);
-      } else if (num == 5) {
-        console.log(5);
-      } else if (num == 6) {
-        console.log(6);
-      } else if (num == 7) {
-        console.log(7);
-      } else if (num == 8) {
-        console.log(0);
-      } else if (num == 9) {
-        console.log(0);
-      } else if (num == 10) {
-        console.log(0);
-      } else if (num == 11) {
-        console.log(0);
-      } else if (num == 12) {
-        console.log(0);
-      } else if (num == 13) {
-        console.log(0);
-      } else if (num == 14) {
-        console.log(0);
-      } else if (num == 15) {
-        console.log(0);
-      } else if (num == 16) {
-        console.log(0);
-      }
+    enter(num) {
+      console.log(num)
+      this.currentIndex = num;
+    },
+    leave() {
+      this.currentIndex = null;
     },
     changeTab(num) {
       this.activedNum = num;
+    },
+    jumpPage(num){
+      this.$router.push({path:'/home/property',query:{index:num}})
     },
     getWeather() {
       this.$axios
@@ -603,6 +490,10 @@ export default {
                   font-weight: 500;
                   color: rgba(255, 255, 255, 1);
                 }
+                img{
+                  width:100%;
+                  height:100%;
+                }
               }
             }
           }
@@ -700,9 +591,135 @@ export default {
           }
         }
         .map-main {
-          img {
-            width: 100%;
-            height: 100%;
+          margin: 30px auto 0;
+          width: 380px;
+          height: 280px;
+          position: relative;
+          .actived{
+            transform: scale(1.5);
+          }
+          .imgs1 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 142px;
+            height: 119px;
+          }
+          .imgs2 {
+            position: absolute;
+            bottom: 0;
+            left: 95px;
+            width: 128px;
+            height: 95px;
+          }
+          .imgs3 {
+            position: absolute;
+            bottom: 20px;
+            left: 205px;
+            width: 124px;
+            height: 100px;
+          }
+          .imgs4 {
+            position: absolute;
+            bottom: 88px;
+            left: 58px;
+            width: 120px;
+            height: 75px;
+          }
+          .imgs5 {
+            position: absolute;
+            bottom: 73px;
+            left: 144px;
+            width: 81px;
+            height: 63px;
+          }
+          .imgs6 {
+            position: absolute;
+            bottom: 35px;
+            left: 232px;
+            width: 90px;
+            height: 120px;
+            transform: rotate(-12deg);
+          }
+          .imgs7 {
+            position: absolute;
+            bottom: 133px;
+            left: 15px;
+            width: 96px;
+            height: 124px;
+          }
+          .imgs8 {
+            position: absolute;
+            bottom: 143px;
+            left: 59px;
+            width: 50px;
+            height: 60px;
+            transform: rotate(-10deg);
+          }
+          .imgs9 {
+            position: absolute;
+            bottom: 145px;
+            left: 85px;
+            width: 84px;
+            height: 113px;
+            // transform: rotate(-10deg);
+          }
+          .imgs10 {
+            position: absolute;
+            bottom: 178px;
+            left: 125px;
+            width: 58px;
+            height: 84px;
+            // transform: rotate(-10deg);
+          }
+          .imgs11 {
+            position: absolute;
+            bottom: 128px;
+            left: 158px;
+            width: 115px;
+            height: 90px;
+            // transform: rotate(-10deg);
+          }
+          .imgs12 {
+            position: absolute;
+            bottom: 108px;
+            left: 197px;
+            width: 58px;
+            height: 50px;
+            // transform: rotate(-10deg);
+          }
+          .imgs13 {
+            position: absolute;
+            bottom: 186px;
+            left: 160px;
+            width: 106px;
+            height: 80px;
+            // transform: rotate(-10deg);
+          }
+          .imgs14 {
+            position: absolute;
+            bottom: 115px;
+            left: 239px;
+            width: 90px;
+            height: 100px;
+            transform: rotate(10deg);
+          }
+          .imgs15 {
+            position: absolute;
+            bottom: 120px;
+            left: 293px;
+            width: 82px;
+            height: 90px;
+
+            transform: rotate(-10deg);
+          }
+          .imgs16 {
+            position: absolute;
+            bottom: 169px;
+            left: 270px;
+            width: 82px;
+            height: 90px;
+            transform: rotate(-28deg);
           }
         }
       }
@@ -792,8 +809,8 @@ export default {
             color: rgba(153, 153, 153, 1);
             line-height: 28px;
           }
-          img{
-            margin-right:12px;
+          img {
+            margin-right: 12px;
           }
         }
         .projects-main {
@@ -927,8 +944,8 @@ export default {
             color: rgba(153, 153, 153, 1);
             line-height: 28px;
           }
-          img{
-            margin-right:12px;
+          img {
+            margin-right: 12px;
           }
         }
       }

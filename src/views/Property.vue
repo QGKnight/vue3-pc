@@ -17,39 +17,48 @@
       <div class="items">
         <div class="label">项目类型：</div>
         <div class="cell">
-          <div v-for="item in 13">农村土地经营权</div>
+          <div
+            v-for="(item,index) in claType"
+            :class="{actived:index==claIndex}"
+            :key="index"
+            @click="changeCla(index)"
+          >{{item}}</div>
         </div>
       </div>
       <div class="items">
         <div class="label">面积（亩/平方米）：</div>
         <div class="cell">
-          <div v-for="item in 13">10以下</div>
+          <div v-for="(item,index) in maxType" :class="{actived:index==maxIndex}" :key="index" @click="changeMax(index)">{{item}}</div>
         </div>
       </div>
       <div class="items">
         <div class="label">所在地区：</div>
         <div class="cell">
-          <div v-for="item in 13">自贡市</div>
+          <div v-for="(item,index) in addTypes" :class="{actived:index==addIndex}" :key="index" @click="changeAdd(index)">{{item}}</div>
         </div>
       </div>
     </div>
     <div class="cond main-auto">
       <div class="left">
-        <div class="item">
-          <span>按面积</span>
-          <img src="../assets/home/new/down.png" alt />
+        <div class="item" @click="changeStatus(0)">
+          <span :class="{actived:statusIndex==0}">按面积</span>
+          <img v-if="statusIndex==0" class="uo" src="../assets/home/new/uo.png" alt="">
+          <img v-else src="../assets/home/new/down.png" alt />
         </div>
-        <div class="item">
-          <span>按流转年限</span>
-          <img src="../assets/home/new/down.png" alt />
+        <div class="item" @click="changeStatus(1)">
+          <span :class="{actived:statusIndex==1}">按流转年限</span>
+          <img v-if="statusIndex==1" class="uo" src="../assets/home/new/uo.png" alt="">
+          <img v-else src="../assets/home/new/down.png" alt />
         </div>
-        <div class="item">
-          <span>按价格</span>
-          <img src="../assets/home/new/down.png" alt />
+        <div class="item" @click="changeStatus(2)">
+          <span :class="{actived:statusIndex==2}">按价格</span>
+          <img v-if="statusIndex==2" class="uo" src="../assets/home/new/uo.png" alt="">
+          <img v-else src="../assets/home/new/down.png" alt />
         </div>
-        <div class="item">
-          <span>按最新</span>
-          <img src="../assets/home/new/down.png" alt />
+        <div class="item" @click="changeStatus(3)">
+          <span :class="{actived:statusIndex==3}">按最新</span>
+          <img v-if="statusIndex==3" class="uo" src="../assets/home/new/uo.png" alt="">
+          <img v-else src="../assets/home/new/down.png" alt />
         </div>
       </div>
       <div class="right" @click="changeItem">
@@ -59,7 +68,7 @@
     </div>
     <div class="list-main main-auto" v-if="!showFlag">
       <div class="items" v-for="item in 12">
-        <img src="../assets/404.gif" alt />
+        <img src="../assets/home/new/tuxing.png" alt />
         <div class="msg-main">
           <div class="title">彭州市生平镇泉村5组、6...</div>
           <div class="tips">当前价：---</div>
@@ -101,15 +110,78 @@ export default {
   name: "index",
   data() {
     return {
+      statusIndex:null,
+      claIndex: 0,
+      maxIndex:0,
+      addIndex:0,
       showFlag: false,
       number: "",
       word: "",
-      currentPage: 5
+      currentPage: 5,
+      claType: [
+        "全部",
+        "农村土地经营权",
+        "林地使用权",
+        "林业产业化项目",
+        "林产品",
+        "林木所有权",
+        "林木采伐权",
+        "集体经营性",
+        "建设用地使用权",
+        "水面养殖权",
+        "农业生产设施所有权",
+        "农村集体资产股权",
+        "四荒使用权",
+        "小型水利设施使用权",
+        "农村房屋租赁",
+        "其他农村项目"
+      ],
+      maxType: ["全部", "10以下", "10-100", "101-200", "201-500", "500以上"],
+      addTypes: [
+        "全部",
+        "寄料镇",
+        "蟒川镇",
+        "小屯镇",
+        "杨楼镇",
+        "王寨乡",
+        "纸坊镇",
+        "临汝镇",
+        "温泉镇",
+        "庙下镇",
+        "夏店镇 ",
+        "骑岭乡",
+        "汝州市",
+        "陵头镇 ",
+        "米店镇",
+        "焦村乡",
+        "大峪镇",
+      ]
     };
   },
+  mounted(){
+    this.addIndex=this.$route.query.index;
+  },
   methods: {
+    changeStatus(num){
+      if(this.statusIndex==num){
+        this.statusIndex=null;
+      }else{
+        this.statusIndex=num;
+      }
+      
+
+    },
     changeItem() {
       this.showFlag = !this.showFlag;
+    },
+    changeMax(index){
+      this.maxIndex=index;
+    },
+    changeCla(index){
+      this.claIndex=index;
+    },
+    changeAdd(index){
+      this.addIndex=index;
     },
     handleSizeChange(val) {
       console.log(`每页 ${val} 条`);
@@ -181,6 +253,13 @@ export default {
         div {
           padding: 0 17px;
           margin-bottom: 29px;
+          font-size: 16px;
+          font-family: PingFang SC;
+          font-weight: 500;
+          cursor: pointer;
+        }
+        .actived {
+          color: rgba(1, 82, 147, 1);
         }
       }
     }
@@ -202,6 +281,12 @@ export default {
           font-weight: 500;
           color: rgba(18, 18, 18, 1);
           margin-right: 8px;
+        }
+        .actived{
+          color:#015293;
+        }
+        .uo{
+          transform: rotate(-180deg);
         }
       }
     }
@@ -235,7 +320,7 @@ export default {
       background: rgba(255, 255, 255, 1);
       box-shadow: 0px 2px 16px 0px rgba(194, 194, 194, 0.2);
       img {
-        width: 276px;
+        width: 100%;
         height: 159px;
         border-radius: 5px 5px 0px 0px;
       }
