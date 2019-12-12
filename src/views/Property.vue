@@ -28,13 +28,23 @@
       <div class="items">
         <div class="label">面积（亩/平方米）：</div>
         <div class="cell">
-          <div v-for="(item,index) in maxType" :class="{actived:index==maxIndex}" :key="index" @click="changeMax(index)">{{item}}</div>
+          <div
+            v-for="(item,index) in maxType"
+            :class="{actived:index==maxIndex}"
+            :key="index"
+            @click="changeMax(index)"
+          >{{item}}</div>
         </div>
       </div>
       <div class="items">
         <div class="label">所在地区：</div>
         <div class="cell">
-          <div v-for="(item,index) in addTypes" :class="{actived:index==addIndex}" :key="index" @click="changeAdd(index)">{{item}}</div>
+          <div
+            v-for="(item,index) in addTypes"
+            :class="{actived:index==addIndex}"
+            :key="index"
+            @click="changeAdd(index)"
+          >{{item}}</div>
         </div>
       </div>
     </div>
@@ -42,22 +52,22 @@
       <div class="left">
         <div class="item" @click="changeStatus(0)">
           <span :class="{actived:statusIndex==0}">按面积</span>
-          <img v-if="statusIndex==0" class="uo" src="../assets/home/new/uo.png" alt="">
+          <img v-if="statusIndex==0" class="uo" src="../assets/home/new/uo.png" alt />
           <img v-else src="../assets/home/new/down.png" alt />
         </div>
         <div class="item" @click="changeStatus(1)">
           <span :class="{actived:statusIndex==1}">按流转年限</span>
-          <img v-if="statusIndex==1" class="uo" src="../assets/home/new/uo.png" alt="">
+          <img v-if="statusIndex==1" class="uo" src="../assets/home/new/uo.png" alt />
           <img v-else src="../assets/home/new/down.png" alt />
         </div>
         <div class="item" @click="changeStatus(2)">
           <span :class="{actived:statusIndex==2}">按价格</span>
-          <img v-if="statusIndex==2" class="uo" src="../assets/home/new/uo.png" alt="">
+          <img v-if="statusIndex==2" class="uo" src="../assets/home/new/uo.png" alt />
           <img v-else src="../assets/home/new/down.png" alt />
         </div>
         <div class="item" @click="changeStatus(3)">
           <span :class="{actived:statusIndex==3}">按最新</span>
-          <img v-if="statusIndex==3" class="uo" src="../assets/home/new/uo.png" alt="">
+          <img v-if="statusIndex==3" class="uo" src="../assets/home/new/uo.png" alt />
           <img v-else src="../assets/home/new/down.png" alt />
         </div>
       </div>
@@ -67,7 +77,7 @@
       </div>
     </div>
     <div class="list-main main-auto" v-if="!showFlag">
-      <div class="items" v-for="item in 12">
+      <div class="items" v-for="item in 12" @click="jumpPage(item)">
         <img src="../assets/home/new/tuxing.png" alt />
         <div class="msg-main">
           <div class="title">彭州市生平镇泉村5组、6...</div>
@@ -110,10 +120,10 @@ export default {
   name: "index",
   data() {
     return {
-      statusIndex:null,
+      statusIndex: null,
       claIndex: 0,
-      maxIndex:0,
-      addIndex:0,
+      maxIndex: 0,
+      addIndex: 0,
       showFlag: false,
       number: "",
       word: "",
@@ -154,34 +164,35 @@ export default {
         "陵头镇 ",
         "米店镇",
         "焦村乡",
-        "大峪镇",
+        "大峪镇"
       ]
     };
   },
-  mounted(){
-    this.addIndex=this.$route.query.index;
+  mounted() {
+    this.addIndex = this.$route.query.index;
   },
   methods: {
-    changeStatus(num){
-      if(this.statusIndex==num){
-        this.statusIndex=null;
-      }else{
-        this.statusIndex=num;
+    jumpPage(id) {
+      this.$router.push({path:'/notice',query:{id:id}})
+    },
+    changeStatus(num) {
+      if (this.statusIndex == num) {
+        this.statusIndex = null;
+      } else {
+        this.statusIndex = num;
       }
-      
-
     },
     changeItem() {
       this.showFlag = !this.showFlag;
     },
-    changeMax(index){
-      this.maxIndex=index;
+    changeMax(index) {
+      this.maxIndex = index;
     },
-    changeCla(index){
-      this.claIndex=index;
+    changeCla(index) {
+      this.claIndex = index;
     },
-    changeAdd(index){
-      this.addIndex=index;
+    changeAdd(index) {
+      this.addIndex = index;
     },
     handleSizeChange(val) {
       console.log(`每页 ${val} 条`);
@@ -282,10 +293,10 @@ export default {
           color: rgba(18, 18, 18, 1);
           margin-right: 8px;
         }
-        .actived{
-          color:#015293;
+        .actived {
+          color: #015293;
         }
-        .uo{
+        .uo {
           transform: rotate(-180deg);
         }
       }

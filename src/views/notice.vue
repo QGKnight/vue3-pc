@@ -32,7 +32,7 @@
             <div class="cell">公示日期：2019-12-09</div>
           </div>
           <div class="right">
-            <div class="btns">报名</div>
+            <div class="btns" @click="jumpTo('/sigOne')">报名</div>
           </div>
         </div>
       </div>

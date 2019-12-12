@@ -1,13 +1,13 @@
 <template>
   <div class="home">
     <div class="banner">
-      <!-- <div class="wrapper">
+      <div class="wrapper">
         <swiper :options="swiperOption" class="swiper-container">
           <swiper-slide class="swiper-item" v-for="item of swiperList" :key="item.id">
             <img class="swiper-img" :src="item.imgUrl" />
           </swiper-slide>
         </swiper>
-      </div> -->
+      </div>
       <div class="topBar">
         <div class="main-auto mains">
           <div class="left">
@@ -139,25 +139,26 @@ export default {
   height: 100%;
   .banner {
     width: 100%;
-    height: 98px;
+    height: 420px;
+    background: pink;
     position: relative;
-    // .wrapper /deep/ .swiper-pagination-bullet-active {
-    //   background: #fff !important;
-    //   .wrapper {
-    //     overflow: hidden;
-    //     width: 100%;
-    //     height: 0;
-    //     padding-bottom: 26.6666667%;
-    //     background: #ccc;
-    //     .swiper-item {
-    //       width: 100%;
-    //       .swiper-img {
-    //         width: 100%;
-    //         height:100%;
-    //       }
-    //     }
-    //   }
-    // }
+    .wrapper /deep/ .swiper-pagination-bullet-active {
+      background: #fff !important;
+      .wrapper {
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        padding-bottom: 26.6666667%;
+        background: #ccc;
+        .swiper-item {
+          width: 100%;
+          .swiper-img {
+            width: 100%;
+            height:100%;
+          }
+        }
+      }
+    }
     .topBar {
       position: absolute;
       top: 0;

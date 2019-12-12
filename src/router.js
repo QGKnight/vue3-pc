@@ -77,13 +77,31 @@ const router = new Router({
               path: '/info/msg',
               name: 'info',
               component: resolve => require(['./views/infos/msg'], resolve),
-              meta: { title: '个人信息', keepAlive: false },
+              meta: { title: '个人信息', keepAlive: false ,type:'msg',showFlag:false},
             },
             {
               path: '/info/password',
               name: 'info',
               component: resolve => require(['./views/infos/password'], resolve),
-              meta: { title: '登录密码', keepAlive: false },
+              meta: { title: '登录密码', keepAlive: false ,type:'password',showFlag:true},
+            },
+            {
+              path: "/info/upPage",
+              name: "info",
+              component: resolve => require(['./views/infos/upPage'], resolve),
+              meta: { title: '产权申报', keepAlive: false ,type:'upPage',showFlag:false}
+            },
+            {
+              path: "/info/result",
+              name: "info",
+              component: resolve => require(['./views/infos/result'], resolve),
+              meta: { title: '查询结果', keepAlive: false ,type:'result',showFlag:false}
+            },
+            {
+              path: "/info/edit",
+              name: "info",
+              component: resolve => require(['./views/infos/edit'], resolve),
+              meta: { title: '材料详情', keepAlive: false ,type:'edit',showFlag:false}
             },
           ]
         }
@@ -121,11 +139,12 @@ const router = new Router({
       meta: { title: '公告详情', keepAlive: false }
     },
     {
-      path: "/upPage",
-      name: "upPage",
-      component: resolve => require(['./views/upPage'], resolve),
-      meta: { title: '产权申报', keepAlive: false }
+      path: "/sigOne",
+      name: "sigOne",
+      component: resolve => require(['./views/sigOne'], resolve),
+      meta: { title: '报名流程', keepAlive: false }
     },
+    
     {
       path: "*",
       redirect: "/notFound"
@@ -135,7 +154,7 @@ const router = new Router({
     return { x: 0, y: 0 }
   }
 })
-const whiteList = ['password','msg','info','upPage','contact','login', 'register', 'home','index','property','notice','forget','deal','chart','check','guide','policy','news'];
+const whiteList = ['sigOne','password','msg','info','upPage','contact','login', 'register', 'home','index','property','notice','forget','deal','chart','check','guide','policy','news'];
 router.beforeEach(function (to, from, next) {
   // 登录拦截
   const token = utils.storage.get('token') ? true : false;

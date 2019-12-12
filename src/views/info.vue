@@ -18,19 +18,19 @@
           <div class="cell">
             <router-link to="/info/msg">
               <img src="../assets/home/new/geren.png" alt />
-              <span>个人信息</span>
+              <span :class="{actived:$route.meta.type=='msg'}">个人信息</span>
             </router-link>
           </div>
           <div class="cell">
             <router-link to="/info/password">
               <img src="../assets/home/new/pass.png" alt />
-              <span>修改密码</span>
+              <span :class="{actived:$route.meta.type=='password'}">修改密码</span>
             </router-link>
           </div>
           <div class="cell">
-            <router-link to="/info/password">
+            <router-link to="/info/result">
               <img src="../assets/home/new/jieguo.png" alt />
-              <span>查询结果</span>
+              <span :class="{actived:$route.meta.type=='result'}">查询结果</span>
             </router-link>
           </div>
           <div class="cell">
@@ -40,9 +40,9 @@
             </router-link>
           </div>
           <div class="cell">
-            <router-link to="/info/password">
+            <router-link to="/info/upPage">
               <img src="../assets/home/new/zhuanrang.png" alt />
-              <span>意向转让</span>
+              <span :class="{actived:$route.meta.type=='upPage'}">项目申报</span>
             </router-link>
           </div>
           <div class="cell">
@@ -61,8 +61,16 @@
       </div>
       <div class="main-right">
         <div class="head">
-          <img src="../assets/home/new/biaoge.png" alt />
-          <span>{{$route.meta.title}}</span>
+          <div class="left">
+            <img src="../assets/home/new/biaoge.png" alt />
+            <span>{{$route.meta.title}}</span>
+          </div>
+          <div class="right">
+            <div v-if="$route.meta.showFlag">
+              <el-input placeholder="请输入关键字" v-model="name" clearable></el-input>
+              <span>搜索</span>
+            </div>
+          </div>
         </div>
         <div class="right-main">
           <router-view />
@@ -159,8 +167,12 @@ export default {
             span {
               margin-top: 7px;
               font-size: 14px;
-              font-weight: 500;
+              font-weight: 600;
+              font-family: PingFang SC;
               color: rgba(18, 18, 18, 1);
+            }
+            .actived {
+              color: #015293;
             }
           }
         }
@@ -172,17 +184,39 @@ export default {
         height: 75px;
         background: rgba(229, 245, 253, 1);
         display: flex;
+        justify-content: space-between;
         align-items: center;
         padding: 0 25px;
-        img {
-          width: 28px;
-          height: 28px;
-          margin-right: 18px;
+        .left {
+          img {
+            width: 28px;
+            height: 28px;
+            margin-right: 18px;
+          }
+          span {
+            font-size: 20px;
+            font-weight: bold;
+            color: rgba(1, 82, 147, 1);
+          }
         }
-        span {
-          font-size: 20px;
-          font-weight: bold;
-          color: rgba(1, 82, 147, 1);
+        .right {
+          div {
+            display: flex;
+            align-items: center;
+            span {
+              margin-left: 15px;
+              display: inline-block;
+              width: 73px;
+              height: 38px;
+              line-height: 38px;
+              text-align: center;
+              font-size: 16px;
+              font-weight: 500;
+              color: rgba(255, 255, 255, 1);
+              border-radius: 5px;
+              background: #015293;
+            }
+          }
         }
       }
       .right-main {

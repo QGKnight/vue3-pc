@@ -224,7 +224,7 @@
         <div class="notice-one">
           <div class="tip">
             <img src="../assets/home/new/gonggao.png" alt />
-            <span>通知公告</span>
+            <span>成交公告</span>
           </div>
           <div class="more">
             <span>更多</span>
@@ -259,8 +259,8 @@
             <span>产权信息发布</span>
           </div>
           <div class="two-main">
-            <img src="../assets/home/new/shenbao.png" alt />
-            <img src="../assets/home/new/shenpi.png" alt />
+            <img src="../assets/home/new/shenbao.png" @click="jumpTo('/info/upPage')" alt />
+            <img src="../assets/home/new/shenpi.png" @click="jumpTo('/info/result')" alt />
           </div>
         </div>
       </div>
