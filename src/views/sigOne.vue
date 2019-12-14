@@ -1,5 +1,6 @@
 <template>
   <div class="page">
+    <vheader></vheader>
     <div class="nav-top main-auto">当前位置：首页 > 项目详情 > 报名流程</div>
     <div class="head-main main-auto">
       <div class="name">报名项目：师寨镇刘小营村鱼塘出租项目</div>
@@ -70,29 +71,32 @@
         </div>
         <div class="btned">
           <div class="items" @click="twoNext">成功支付未跳转</div>
-          <div class="items">上一页</div>
+          <div class="items" @click="goBackPage">上一页</div>
         </div>
       </div>
       <div class="step-three" v-if="threeStep">
         <div class="tips">您的受让登记信息已提交，交易所对您的受让资格进行审核，审核通过后需缴纳保证金方可取得报价资格，请您耐心等耐。</div>
         <div class="btns">
-          <div>我的个人中心</div>
+          <div @click="jumpTo('')">我的个人中心</div>
           <div>返 回</div>
         </div>
       </div>
     </div>
+    <vfoot></vfoot>
   </div>
 </template>
 <script>
+import vfoot from "../components/foot";
+import vheader from "../components/header";
 import * as utils from "../utils";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 import "swiper/dist/css/swiper.css";
 export default {
   name: "index",
-  components: { swiper, swiperSlide },
+  components: { swiper, swiperSlide, vheader, vfoot },
   data() {
     return {
-    //   currentPage: 1,
+      //   currentPage: 1,
       firstStep: true,
       twoStep: false,
       threeStep: false,
@@ -109,12 +113,16 @@ export default {
     firstNext() {
       this.firstStep = false;
       this.twoStep = true;
-      utils.storage.set('currentPage','2')
+      // utils.storage.set('currentPage','2')
     },
     twoNext() {
       this.firstStep = false;
       this.twoStep = false;
       this.threeStep = true;
+    },
+    goBackPage() {
+      this.firstStep = true;
+      this.twoStep = false;
     }
   }
 };

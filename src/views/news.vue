@@ -51,7 +51,7 @@ export default {
       number: "",
       word: "",
       currentIndex: 0,
-      currentPage:1
+      currentPage: 1
     };
   },
   methods: {
@@ -144,6 +144,12 @@ export default {
         justify-content: space-between;
         align-items: center;
         height: 68px;
+        &:nth-child(even) {
+          background: #fafafa;
+        }
+        &:nth-child(odd) {
+          background: #f0fbff;
+        }
         .left {
           width: 50%;
           text-align: center;
@@ -164,10 +170,10 @@ export default {
         }
       }
     }
-    .page-tion{
-        margin-top:48px;
-        width:100%;
-        text-align: center;
+    .page-tion {
+      margin-top: 48px;
+      width: 100%;
+      text-align: center;
     }
   }
 }

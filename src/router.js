@@ -83,7 +83,7 @@ const router = new Router({
               path: '/info/password',
               name: 'info',
               component: resolve => require(['./views/infos/password'], resolve),
-              meta: { title: '登录密码', keepAlive: false ,type:'password',showFlag:true},
+              meta: { title: '登录密码', keepAlive: false ,type:'password',showFlag:false},
             },
             {
               path: "/info/upPage",
@@ -102,6 +102,24 @@ const router = new Router({
               name: "info",
               component: resolve => require(['./views/infos/edit'], resolve),
               meta: { title: '材料详情', keepAlive: false ,type:'edit',showFlag:false}
+            },
+            {
+              path: "/info/colle",
+              name: "info",
+              component: resolve => require(['./views/infos/colle'], resolve),
+              meta: { title: '我的收藏', keepAlive: false ,type:'colle',showFlag:true}
+            },
+            {
+              path: "/info/project",
+              name: "info",
+              component: resolve => require(['./views/infos/project'], resolve),
+              meta: { title: '我的项目', keepAlive: false ,type:'project',showFlag:true}
+            },
+            {
+              path: "/info/record",
+              name: "info",
+              component: resolve => require(['./views/infos/record'], resolve),
+              meta: { title: '资金记录', keepAlive: false ,type:'record',showFlag:true}
             },
           ]
         }
@@ -144,6 +162,18 @@ const router = new Router({
       component: resolve => require(['./views/sigOne'], resolve),
       meta: { title: '报名流程', keepAlive: false }
     },
+    {
+      path: "/detail",
+      name: "detail",
+      component: resolve => require(['./views/detail'], resolve),
+      meta: { title: '详情', keepAlive: false }
+    },
+    {
+      path: "/projectDetail",
+      name: "projectDetail",
+      component: resolve => require(['./views/projectDetail'], resolve),
+      meta: { title: '详情', keepAlive: false }
+    },
     
     {
       path: "*",
@@ -154,7 +184,7 @@ const router = new Router({
     return { x: 0, y: 0 }
   }
 })
-const whiteList = ['sigOne','password','msg','info','upPage','contact','login', 'register', 'home','index','property','notice','forget','deal','chart','check','guide','policy','news'];
+const whiteList = ['projectDetail','detail','sigOne','password','msg','info','upPage','contact','login', 'register', 'home','index','property','notice','forget','deal','chart','check','guide','policy','news'];
 router.beforeEach(function (to, from, next) {
   // 登录拦截
   const token = utils.storage.get('token') ? true : false;

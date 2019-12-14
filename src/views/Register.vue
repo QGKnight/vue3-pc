@@ -22,14 +22,14 @@
           <el-input placeholder="请输入手机号码" v-model="loginUser.mobile" clearable></el-input>
         </div>
         <div class="cell celled">
-          <img src="../assets/auth/pass.png" alt />
+          <img src="../assets/home/new/vscode.png" alt />
           <el-input placeholder="请输入验证码" v-model="loginUser.smscode" clearable></el-input>
           <span @click="handCode">{{getCode}}</span>
         </div>
-        <div class="cell">
+        <!-- <div class="cell">
           <img src="../assets/auth/name.png" alt />
           <el-input placeholder="请输入真实姓名" v-model="loginUser.name" clearable></el-input>
-        </div>
+        </div> -->
         <div class="cell">
           <img src="../assets/auth/pass.png" alt />
           <el-input placeholder="请输入密码" v-model="loginUser.password" show-password></el-input>
@@ -45,12 +45,15 @@
         </div>
       </div>
     </div>
+    <vfoot></vfoot>
   </div>
 </template>
 
 <script>
+import vfoot from "../components/foot";
 export default {
   name: "login",
+  components: { vfoot },
   data() {
     return {
       loginUser: {
@@ -190,7 +193,7 @@ export default {
         align-items: center;
         margin-bottom: 25px;
         img {
-          width: 15px;
+          width: 17px;
           height: 21px;
           margin-right: 24px;
         }

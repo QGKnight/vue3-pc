@@ -21,40 +21,42 @@
               <span :class="{actived:$route.meta.type=='msg'}">个人信息</span>
             </router-link>
           </div>
-          <div class="cell">
-            <router-link to="/info/password">
-              <img src="../assets/home/new/pass.png" alt />
-              <span :class="{actived:$route.meta.type=='password'}">修改密码</span>
-            </router-link>
-          </div>
-          <div class="cell">
-            <router-link to="/info/result">
-              <img src="../assets/home/new/jieguo.png" alt />
-              <span :class="{actived:$route.meta.type=='result'}">查询结果</span>
-            </router-link>
-          </div>
-          <div class="cell">
-            <router-link to="/info/password">
-              <img src="../assets/home/new/project.png" alt />
-              <span>我的项目</span>
-            </router-link>
-          </div>
-          <div class="cell">
+          
+           <div class="cell">
             <router-link to="/info/upPage">
               <img src="../assets/home/new/zhuanrang.png" alt />
               <span :class="{actived:$route.meta.type=='upPage'}">项目申报</span>
             </router-link>
           </div>
           <div class="cell">
-            <router-link to="/info/password">
+            <router-link to="/info/result">
+              <img src="../assets/home/new/jieguo.png" alt />
+              <span :class="{actived:$route.meta.type=='result'}">申报结果</span>
+            </router-link>
+          </div>
+          <div class="cell">
+            <router-link to="/info/project">
+              <img src="../assets/home/new/project.png" alt />
+              <span :class="{actived:$route.meta.type=='project'}">报名项目</span>
+            </router-link>
+          </div>
+         
+          <div class="cell">
+            <router-link to="/info/record">
               <img src="../assets/home/new/record.png" alt />
-              <span>交易记录</span>
+              <span :class="{actived:$route.meta.type=='record'}">资金记录</span>
+            </router-link>
+          </div>
+          <div class="cell">
+            <router-link to="/info/colle">
+              <img src="../assets/home/new/shoucang.png" alt />
+              <span :class="{actived:$route.meta.type=='colle'}"> 我的收藏</span>
             </router-link>
           </div>
           <div class="cell">
             <router-link to="/info/password">
-              <img src="../assets/home/new/shoucang.png" alt />
-              <span>我的收藏</span>
+              <img src="../assets/home/new/pass.png" alt />
+              <span :class="{actived:$route.meta.type=='password'}">修改密码</span>
             </router-link>
           </div>
         </div>
@@ -97,7 +99,6 @@ export default {
     justify-content: space-between;
     .mainleft {
       width: 300px;
-      box-shadow: 0px 2px 20px 0px rgba(194, 194, 194, 0.2);
       .head {
         width: 100%;
         height: 75px;
@@ -223,7 +224,6 @@ export default {
         min-height: 600px;
         margin-top: 14px;
         background: rgba(255, 255, 255, 1);
-        box-shadow: 0px 2px 20px 0px rgba(194, 194, 194, 0.2);
       }
     }
   }

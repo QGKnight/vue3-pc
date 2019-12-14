@@ -49,7 +49,7 @@ export default {
     return {
       number: "",
       word: "",
-      currentPage:5
+      currentPage: 5
     };
   },
   methods: {
@@ -129,6 +129,12 @@ export default {
         justify-content: space-between;
         align-items: center;
         height: 68px;
+        &:nth-child(even) {
+          background: #fafafa;
+        }
+        &:nth-child(odd) {
+          background: #f0fbff;
+        }
         .left {
           .num {
             font-size: 16px;
@@ -152,8 +158,8 @@ export default {
       }
     }
   }
-  .page-tion{
-    margin-top:48px;
+  .page-tion {
+    margin-top: 48px;
     text-align: center;
   }
 }

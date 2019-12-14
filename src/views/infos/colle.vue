@@ -2,18 +2,16 @@
   <div class="page">
     <div class="page-main">
       <div class="celled">
-        <div class="name">项目编号</div>
-        <div class="time">提交时间</div>
-        <div class="status">结果</div>
-        <div class="tool">操作</div>
+        <div class="name">标题</div>
+        <div class="time">发布时间</div>
+        <div class="tool"></div>
       </div>
       <div class="cell" v-for="item in 8">
         <div class="name">•成都农村产权交易所有限责任公司</div>
-        <div class="time">2019年12月12日</div>
-        <div class="status">成功</div>
+        <div class="time">2019-12-12</div>
         <div class="tool">
-          <span class="look" @click="jumpPage(item)">查看</span>
-          <span @click="cancelTool(item)">删除</span>
+          <img src="../../assets/home/new/cang.png" alt />
+          <span class="look" @click="jumpPage(item)">取消收藏</span>
         </div>
       </div>
       <div class="page-tion">
@@ -73,36 +71,47 @@ export default {
 <style scoped lang="less">
 .page {
   .page-main {
+    // padding: 25px;
     .page-tion {
       margin-top: 48px;
       width: 100%;
       text-align: center;
     }
     .celled {
-      height: 74px;
+      height: 68px;
       display: flex;
       flex-direction: row;
       align-items: center;
-      background: rgba(126, 206, 244, 1);
+      background: #7ecef4;
       div {
         text-align: center;
-        font-size: 16px;
+        font-size: 18px;
         font-family: PingFang SC;
-        font-weight: 500;
-        color: #fff;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 1);
       }
       .name {
-        width: 40%;
+        width: 55%;
       }
       .time {
         width: 25%;
       }
-      .status {
-        width: 15%;
-      }
+
       .tool {
         flex: 1;
-        text-align: center;
+        display: flex;
+        align-items: center;
+        img {
+          width: 24px;
+          height: 24px;
+          margin-right: 16px;
+        }
+        span {
+          font-size: 16px;
+          font-family: PingFang SC;
+          font-weight: 500;
+          color: rgba(18, 18, 18, 1);
+        }
       }
     }
     .cell {
@@ -128,31 +137,26 @@ export default {
         color: rgba(102, 102, 102, 1);
       }
       .name {
-        width: 40%;
+        width: 55%;
       }
       .time {
         width: 25%;
       }
-      .status {
-        width: 15%;
-      }
+
       .tool {
         flex: 1;
+        display: flex;
+        align-items: center;
+        img {
+          width: 24px;
+          height: 24px;
+          margin-right: 16px;
+        }
         span {
-          display: inline-block;
-          width: 70px;
-          height: 30px;
-          line-height: 30px;
-          background: rgba(126, 206, 244, 1);
-          border-radius: 5px;
-          font-size: 14px;
+          font-size: 16px;
           font-family: PingFang SC;
           font-weight: 500;
-          color: rgba(255, 255, 255, 1);
-          margin-right: 18px;
-        }
-        .look {
-          background: rgba(255, 191, 101, 1);
+          color: rgba(18, 18, 18, 1);
         }
       }
     }

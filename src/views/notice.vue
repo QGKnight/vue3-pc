@@ -1,20 +1,17 @@
 <template>
   <div class="page">
+    <vheader></vheader>
     <div class="nav-top main-auto">当前位置：首页 > 交易公告 > 成交公告</div>
     <div class="notice-banner main-auto">
       <div class="warp">
         <swiper :options="swiperOption">
           <swiper-slide class="swiper-item">
+            <img src="../assets/home/new/33.png" alt="">
             <div>省纪委调研灌南县“三资”管理农村产权交易工作1</div>
           </swiper-slide>
           <swiper-slide class="swiper-item">
+            <img src="../assets/home/new/44.png" alt="">
             <div>省纪委调研灌南县“三资”管理农村产权交易工作2</div>
-          </swiper-slide>
-          <swiper-slide class="swiper-item">
-            <div>省纪委调研灌南县“三资”管理农村产权交易工作3</div>
-          </swiper-slide>
-          <swiper-slide class="swiper-item">
-            <div>省纪委调研灌南县“三资”管理农村产权交易工作4</div>
           </swiper-slide>
         </swiper>
       </div>
@@ -280,7 +277,7 @@
           <span>更多</span>
         </div>
         <div class="one-main">
-          <div class="cell" v-for="item in 6">
+          <div class="cell" v-for="item in 6" @click="jumpTo('/detail')">
             <div class="title-left">• 省委副书记视察汝州农村产权交易11111111111111</div>
             <div>2019-07-15</div>
           </div>
@@ -295,21 +292,24 @@
           <span>更多</span>
         </div>
         <div class="one-main">
-          <div class="cell" v-for="item in 6">
+          <div class="cell" v-for="item in 6"  @click="jumpTo('/detail')">
             <div class="title-left">• 省委副书记视察汝州农村产权交易1111111111</div>
             <div>2019-07-15</div>
           </div>
         </div>
       </div>
     </div>
+    <vfoot></vfoot>
   </div>
 </template>
 <script>
+import vfoot from "../components/foot";
+import vheader from "../components/header";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 import "swiper/dist/css/swiper.css";
 export default {
   name: "index",
-  components: { swiper, swiperSlide },
+  components: { swiper, swiperSlide,vheader,vfoot},
   data() {
     return {
       swiperOption: {
@@ -345,12 +345,15 @@ export default {
     .warp {
       width: 549px;
       height: 408px;
-      background: pink;
       /deep/ .swiper-container {
         width: 100%;
         height: 100%;
         .swiper-item {
           position: relative;
+          img{
+            width:100%;
+            height:100%;
+          }
           div {
             position: absolute;
             bottom: 0;

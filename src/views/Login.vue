@@ -26,7 +26,10 @@
           <el-input placeholder="请输入登录密码" v-model="loginUser.password" clearable></el-input>
         </div>
         <div class="tools">
-          <div>记住密码</div>
+          <div class="left">
+            <!-- <img :src="checkFlag?checked:check" alt />
+            <span>记住密码</span> -->
+          </div>
           <div @click="jumpTo('/forget')">忘记密码？</div>
         </div>
         <div class="btns">登录</div>
@@ -36,21 +39,31 @@
         </div>
       </div>
     </div>
+    <vfoot></vfoot>
   </div>
 </template>
 
 <script>
+import vfoot from '../components/foot'
 export default {
   name: "login",
+  components:{vfoot},
   data() {
     return {
+      checkFlag:false,
       loginUser: {
         mobile: "",
         password: ""
-      }
+      },
+      checked: require("../assets/home/new/checked.png"),
+      check: require("../assets/home/new/check.png")
     };
   },
-  methods: {}
+  methods: {
+    changeCheck(){
+      this.checkFlag=!this.checkFlag;
+    }
+  }
 };
 </script>
 
@@ -151,6 +164,16 @@ export default {
       .tools {
         display: flex;
         justify-content: space-between;
+        .left{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          img{
+            width:21px;
+            height:21px;
+            margin-right: 5px;
+          }
+        }
         div {
           font-size: 16px;
           font-family: PingFang SC;

@@ -290,7 +290,6 @@ export default {
       width: 120px;
       height: 40px;
       line-height: 40px;
-      background: pink;
       margin-right: 17px;
       text-align: center;
       font-size: 18px;

@@ -34,9 +34,9 @@
       </div>
       <div class="cell">
         <span>产权类型：</span>
-        <el-select v-model="card" placeholder="请选择">
+        <el-select v-model="typeIpt" placeholder="请选择">
           <el-option
-            v-for="item in options"
+            v-for="item in types"
             :key="item.value"
             :label="item.label"
             :value="item.value"
@@ -45,7 +45,7 @@
       </div>
       <div class="cell">
         <span>流转方式：</span>
-        <el-select v-model="card" placeholder="请选择">
+        <el-select v-model="wayIpt" placeholder="请选择">
           <el-option
             v-for="item in options"
             :key="item.value"
@@ -118,16 +118,38 @@ export default {
   name: "index",
   data() {
     return {
+      typeIpt: "",
+      wayIpt: "",
       dialogImageUrl: "",
       dialogVisible: false,
       provincy: "",
       city: "",
       country: "",
-      name: "刘德华",
+      name: "请输入内容",
       num: "412829199945456",
       email: "123456@qq.com",
       mobile: "16601122521",
       card: "",
+      ways: [
+        {
+          value: "选项1",
+          label: "租用"
+        },
+        {
+          value: "选项2",
+          label: "使用"
+        }
+      ],
+      types: [
+        {
+          value: "选项1",
+          label: "四荒使用权"
+        },
+        {
+          value: "选项2",
+          label: "山地使用权"
+        }
+      ],
       option1: [
         {
           value: "选项1",
@@ -190,7 +212,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    // align-items: center;
+    align-items: center;
   }
   .cell {
     display: flex;
@@ -218,8 +240,8 @@ export default {
       width: 557px;
     }
     .upBox {
-      width:500px;
-      margin-left:-10px;
+      width: 500px;
+      margin-left: -10px;
     }
   }
   .celled {

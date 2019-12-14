@@ -17,10 +17,10 @@ function endLoading() {
 }
 axios.defaults.timeout = 5000;
 // 设置默认请求头
-axios.defaults.headers = {
-    'X-Requested-With': 'XMLHttpRequest',
-    'Content-type': 'application/json;charset=UTF-8'
-}
+// axios.defaults.headers = {
+//     'X-Requested-With': 'XMLHttpRequest',
+//     'Content-type': 'application/json;charset=UTF-8'
+// }
 // 请求拦截  设置统一header
 axios.interceptors.request.use(config => {
     // 加载

@@ -2,7 +2,7 @@
   <div class="page">
     <div class="main-auto page-main">
       <div class="head">
-        <img src alt />
+        <img src="../assets/home/new/phone.png" alt />
         <span>联系我们</span>
       </div>
       <div class="box">
@@ -48,6 +48,11 @@ export default {
     font-weight: bold;
     font-style: italic;
     color: rgba(1, 82, 147, 1);
+    img{
+      width:33px;
+      height:21px;
+      margin-right:21px;
+    }
   }
   .box {
     margin: 0 auto;

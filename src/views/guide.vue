@@ -1,10 +1,11 @@
 <template>
   <div class="page">
     <div class="main-auto page-head">
-      <div class="btns">农村土地经营权</div>
+      <div class="btns-box">
+        <div :class="{actived:currentIndex==1}" @click="changeItem(1)">产权交易指南</div>
+        <div :class="{actived:currentIndex==2}" @click="changeItem(2)">产权交易流程</div>
+      </div>
       <div class="right">
-        <span>项目编号:</span>
-        <el-input placeholder="请输入内容" v-model="number" clearable></el-input>
         <span>关键字:</span>
         <el-input placeholder="请输入内容" v-model="word" class="input-with-select">
           <el-button slot="append" class="searchBtn">查询</el-button>
@@ -14,10 +15,10 @@
     <div class="main-auto list">
       <div class="list-nav">
         <div class="left">
-          <span class="num">项目编号</span>
-          <span>成交名称</span>
+          <span class="num"></span>
+          <span>交易规则标题</span>
         </div>
-        <div class="right">成交日期</div>
+        <div class="right">发布时间</div>
       </div>
       <div class="list-main">
         <div class="cell" v-for="item in 7">
@@ -47,9 +48,10 @@ export default {
   name: "index",
   data() {
     return {
+      currentIndex: 1,
       number: "",
       word: "",
-      currentPage:5
+      currentPage: 5
     };
   },
   methods: {
@@ -58,6 +60,9 @@ export default {
     },
     handleCurrentChange(val) {
       console.log(`当前页: ${val}`);
+    },
+    changeItem(num) {
+      this.currentIndex = num;
     }
   }
 };
@@ -71,25 +76,34 @@ export default {
     border-bottom: 2px solid #015293;
     display: flex;
     justify-content: space-between;
-    .btns {
-      width: 200px;
-      height: 100%;
-      background: rgba(1, 82, 147, 1);
-      font-size: 18px;
-      font-weight: bold;
-      color: rgba(255, 255, 255, 1);
-      text-align: center;
-      line-height: 50px;
-      border-radius: 5px 5px 0 0;
+    .btns-box {
+      display: flex;
+      flex-direction: row;
+
+      align-items: center;
+      div {
+        height: 100%;
+        padding: 0 12px;
+        margin-right: 3px;
+        background: rgba(126, 206, 244, 1);
+        border-radius: 5px 5px 0 0;
+        line-height: 50px;
+        font-size: 18px;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 1);
+      }
+      .actived {
+        background: #015293;
+      }
     }
     .right {
       display: flex;
       flex-direction: row;
       align-items: center;
-      width: 700px;
+      width: 400px;
       span {
         display: inline-block;
-        width: 200px;
+        width: 80px;
         font-size: 16px;
         font-weight: 500;
         color: rgba(1, 82, 147, 1);
@@ -98,6 +112,10 @@ export default {
       .el-button {
         background: #015293;
         color: #fff;
+        width:73px;
+        height:40px;
+        border-radius: 0 2px 2px 0;
+        border:1px solid #015293;
       }
     }
   }
@@ -129,6 +147,12 @@ export default {
         justify-content: space-between;
         align-items: center;
         height: 68px;
+        &:nth-child(even) {
+          background: #fafafa;
+        }
+        &:nth-child(odd) {
+          background: #f0fbff;
+        }
         .left {
           .num {
             font-size: 16px;
@@ -152,8 +176,8 @@ export default {
       }
     }
   }
-  .page-tion{
-    margin-top:48px;
+  .page-tion {
+    margin-top: 48px;
     text-align: center;
   }
 }

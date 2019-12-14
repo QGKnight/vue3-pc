@@ -27,11 +27,11 @@
             <div class="main-left">
               <swiper :options="swiperOption">
                 <swiper-slide class="swiper-item">
-                  <img src="../assets/home/new/33.png" alt="">
+                  <img src="../assets/home/new/33.png" alt />
                   <div>省纪委调研灌南县“三资”管理农村产权交易工作1</div>
                 </swiper-slide>
                 <swiper-slide class="swiper-item">
-                  <img src="../assets/home/new/44.png" alt="">
+                  <img src="../assets/home/new/44.png" alt />
                   <div>省纪委调研灌南县“三资”管理农村产权交易工作2</div>
                 </swiper-slide>
               </swiper>
@@ -41,7 +41,7 @@
                 <span :class="{actived:activedNum=='0'}" @click="changeTab(0)">新闻动态</span>
                 <span :class="{actived:activedNum=='1'}" @click="changeTab(1)">地方要闻</span>
               </div>
-              <div class="right-tips">省委副书记视察汝州市...</div>
+              <div class="right-tips" @click="jumpTo('/detail')">省委副书记视察汝州市...</div>
               <div class="right-main">
                 <div class="cell" v-for="item in 7">
                   <span>• 省委副书记视察汝州农村产权交易...</span>
@@ -57,22 +57,149 @@
             <span>地图导航</span>
           </div>
           <div class="map-main">
-            <img class="imgs1" src="../assets/home/map/1.png" :class="{actived:currentIndex==1}" @mouseover="enter(1)" @mouseleave="leave" @click="jumpPage(1)" alt />
-            <img class="imgs2" src="../assets/home/map/2.png" :class="{actived:currentIndex==2}" @mouseover="enter(2)" @mouseleave="leave" @click="jumpPage(2)" alt />
-            <img class="imgs3" src="../assets/home/map/3.png" :class="{actived:currentIndex==3}" @mouseover="enter(3)" @mouseleave="leave" @click="jumpPage(3)" alt />
-            <img class="imgs4" src="../assets/home/map/4.png" :class="{actived:currentIndex==4}" @mouseover="enter(4)" @mouseleave="leave" @click="jumpPage(4)" alt />
-            <img class="imgs5" src="../assets/home/map/5.png" :class="{actived:currentIndex==5}" @mouseover="enter(5)" @mouseleave="leave" @click="jumpPage(5)" alt />
-            <img class="imgs6" src="../assets/home/map/6.png" :class="{actived:currentIndex==6}" @mouseover="enter(6)" @mouseleave="leave" @click="jumpPage(6)" alt />
-            <img class="imgs7" src="../assets/home/map/7.png" :class="{actived:currentIndex==7}" @mouseover="enter(7)" @mouseleave="leave" @click="jumpPage(7)" alt />
-            <img class="imgs8" src="../assets/home/map/8.png" :class="{actived:currentIndex==8}" @mouseover="enter(8)" @mouseleave="leave" @click="jumpPage(8)" alt />
-            <img class="imgs9" src="../assets/home/map/9.png" :class="{actived:currentIndex==9}" @mouseover="enter(9)" @mouseleave="leave" @click="jumpPage(9)" alt />
-            <img class="imgs10" src="../assets/home/map/10.png" :class="{actived:currentIndex==10}" @mouseover="enter(10)" @mouseleave="leave" @click="jumpPage(10)" alt />
-            <img class="imgs11" src="../assets/home/map/11.png" :class="{actived:currentIndex==11}" @mouseover="enter(11)" @mouseleave="leave" @click="jumpPage(11)" alt />
-            <img class="imgs12" src="../assets/home/map/12.png" :class="{actived:currentIndex==12}" @mouseover="enter(12)" @mouseleave="leave" @click="jumpPage(12)" alt />
-            <img class="imgs13" src="../assets/home/map/13.png" :class="{actived:currentIndex==13}" @mouseover="enter(13)" @mouseleave="leave" @click="jumpPage(13)" alt />
-            <img class="imgs14" src="../assets/home/map/14.png" :class="{actived:currentIndex==14}" @mouseover="enter(14)" @mouseleave="leave" @click="jumpPage(14)" alt />
-            <img class="imgs15" src="../assets/home/map/15.png" :class="{actived:currentIndex==15}" @mouseover="enter(15)" @mouseleave="leave" @click="jumpPage(15)" alt />
-            <img class="imgs16" src="../assets/home/map/16.png" :class="{actived:currentIndex==16}" @mouseover="enter(16)" @mouseleave="leave" @click="jumpPage(16)" alt />
+            <div @mouseover="enter(1)" @mouseleave="leave" @click="jumpPage(1)">
+              <img
+                class="imgs1"
+                src="../assets/home/map/1.png"
+                :class="{actived:currentIndex==1}"
+                alt
+              />
+            </div>
+            <img
+              class="imgs2"
+              src="../assets/home/map/2.png"
+              :class="{actived:currentIndex==2}"
+              @mouseover="enter(2)"
+              @mouseleave="leave"
+              @click="jumpPage(2)"
+              alt
+            />
+            <img
+              class="imgs3"
+              src="../assets/home/map/3.png"
+              :class="{actived:currentIndex==3}"
+              @mouseover="enter(3)"
+              @mouseleave="leave"
+              @click="jumpPage(3)"
+              alt
+            />
+            <img
+              class="imgs4"
+              src="../assets/home/map/4.png"
+              :class="{actived:currentIndex==4}"
+              @mouseover="enter(4)"
+              @mouseleave="leave"
+              @click="jumpPage(4)"
+              alt
+            />
+            <img
+              class="imgs5"
+              src="../assets/home/map/5.png"
+              :class="{actived:currentIndex==5}"
+              @mouseover="enter(5)"
+              @mouseleave="leave"
+              @click="jumpPage(5)"
+              alt
+            />
+            <img
+              class="imgs6"
+              src="../assets/home/map/6.png"
+              :class="{actived:currentIndex==6}"
+              @mouseover="enter(6)"
+              @mouseleave="leave"
+              @click="jumpPage(6)"
+              alt
+            />
+            <img
+              class="imgs7"
+              src="../assets/home/map/7.png"
+              :class="{actived:currentIndex==7}"
+              @mouseover="enter(7)"
+              @mouseleave="leave"
+              @click="jumpPage(7)"
+              alt
+            />
+            <img
+              class="imgs8"
+              src="../assets/home/map/8.png"
+              :class="{actived:currentIndex==8}"
+              @mouseover="enter(8)"
+              @mouseleave="leave"
+              @click="jumpPage(8)"
+              alt
+            />
+            <img
+              class="imgs9"
+              src="../assets/home/map/9.png"
+              :class="{actived:currentIndex==9}"
+              @mouseover="enter(9)"
+              @mouseleave="leave"
+              @click="jumpPage(9)"
+              alt
+            />
+            <img
+              class="imgs10"
+              src="../assets/home/map/10.png"
+              :class="{actived:currentIndex==10}"
+              @mouseover="enter(10)"
+              @mouseleave="leave"
+              @click="jumpPage(10)"
+              alt
+            />
+            <img
+              class="imgs11"
+              src="../assets/home/map/11.png"
+              :class="{actived:currentIndex==11}"
+              @mouseover="enter(11)"
+              @mouseleave="leave"
+              @click="jumpPage(11)"
+              alt
+            />
+            <img
+              class="imgs12"
+              src="../assets/home/map/12.png"
+              :class="{actived:currentIndex==12}"
+              @mouseover="enter(12)"
+              @mouseleave="leave"
+              @click="jumpPage(12)"
+              alt
+            />
+            <img
+              class="imgs13"
+              src="../assets/home/map/13.png"
+              :class="{actived:currentIndex==13}"
+              @mouseover="enter(13)"
+              @mouseleave="leave"
+              @click="jumpPage(13)"
+              alt
+            />
+            <img
+              class="imgs14"
+              src="../assets/home/map/14.png"
+              :class="{actived:currentIndex==14}"
+              @mouseover="enter(14)"
+              @mouseleave="leave"
+              @click="jumpPage(14)"
+              alt
+            />
+            <img
+              class="imgs15"
+              src="../assets/home/map/15.png"
+              :class="{actived:currentIndex==15}"
+              @mouseover="enter(15)"
+              @mouseleave="leave"
+              @click="jumpPage(15)"
+              alt
+            />
+            <img
+              class="imgs16"
+              src="../assets/home/map/16.png"
+              :class="{actived:currentIndex==16}"
+              @mouseover="enter(16)"
+              @mouseleave="leave"
+              @click="jumpPage(16)"
+              alt
+            />
           </div>
         </div>
       </div>
@@ -86,27 +213,27 @@
           <span>报名登记</span>
         </div>
         <div class="cell">
-          <img src="../assets/home/new/baoming.png" alt />
+          <img src="../assets/home/new/shouli.png" alt />
           <span>项目受理</span>
         </div>
         <div class="cell">
-          <img src="../assets/home/new/baoming.png" alt />
+          <img src="../assets/home/new/guapai.png" alt />
           <span>项目挂牌</span>
         </div>
         <div class="cell">
-          <img src="../assets/home/new/baoming.png" alt />
+          <img src="../assets/home/new/zuzhi.png" alt />
           <span>组织交易</span>
         </div>
         <div class="cell">
-          <img src="../assets/home/new/baoming.png" alt />
+          <img src="../assets/home/new/chengjiao.png" alt />
           <span>成交确认</span>
         </div>
         <div class="cell">
-          <img src="../assets/home/new/baoming.png" alt />
+          <img src="../assets/home/new/hetong.png" alt />
           <span>合同签订</span>
         </div>
         <div class="cell">
-          <img src="../assets/home/new/baoming.png" alt />
+          <img src="../assets/home/new/jianding.png" alt />
           <span>交易鉴证</span>
         </div>
       </div>
@@ -216,7 +343,7 @@
                 ></el-option>
               </el-select>
             </div>
-            <div class="btns">查询</div>
+            <div class="btns" @click="jumpTo('/home/property')">查询</div>
           </div>
         </div>
       </div>
@@ -254,7 +381,7 @@
           </div>
         </div>
         <div class="notice-two">
-          <div class="tip">
+          <div class="tip tips">
             <img src="../assets/home/new/map.png" alt />
             <span>产权信息发布</span>
           </div>
@@ -322,7 +449,7 @@ export default {
   },
   methods: {
     enter(num) {
-      console.log(num)
+      console.log(num);
       this.currentIndex = num;
     },
     leave() {
@@ -331,12 +458,12 @@ export default {
     changeTab(num) {
       this.activedNum = num;
     },
-    jumpPage(num){
-      this.$router.push({path:'/home/property',query:{index:num}})
+    jumpPage(num) {
+      this.$router.push({ path: "/home/property", query: { index: num } });
     },
     getWeather() {
       this.$axios
-        .get("/api/?version=v1&appid=85571989&appsecret=awQi3RCN&city=汝州")
+        .get("https://www.tianqiapi.com/api/?version=v1&appid=85571989&appsecret=awQi3RCN&city=汝州")
         .then(res => {
           console.log(JSON.stringify(res.data.data));
           this.weatherList = res.data.data;
@@ -490,9 +617,9 @@ export default {
                   font-weight: 500;
                   color: rgba(255, 255, 255, 1);
                 }
-                img{
-                  width:100%;
-                  height:100%;
+                img {
+                  width: 100%;
+                  height: 100%;
                 }
               }
             }
@@ -595,8 +722,11 @@ export default {
           width: 380px;
           height: 280px;
           position: relative;
-          .actived{
-            transform: scale(1.5);
+          .actived {
+            transition: transform 1.2s;
+            &:hover {
+              transform: scale(1.1);
+            }
           }
           .imgs1 {
             position: absolute;
@@ -716,10 +846,10 @@ export default {
           .imgs16 {
             position: absolute;
             bottom: 169px;
-            left: 270px;
+            left: 260px;
             width: 82px;
             height: 90px;
-            transform: rotate(-28deg);
+            transform: rotate(-14deg);
           }
         }
       }
@@ -900,7 +1030,7 @@ export default {
             font-family: PingFang SC;
             font-weight: 500;
             color: rgba(255, 255, 255, 1);
-            margin: 20px auto 0;
+            margin: 40px 0 0 125px;
           }
         }
       }
@@ -926,7 +1056,7 @@ export default {
             margin-right: 9px;
           }
           span {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             color: rgba(255, 255, 255, 1);
           }

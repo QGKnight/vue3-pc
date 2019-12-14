@@ -42,7 +42,7 @@
         </div>
         <!-- <div class="cell">
           <router-link :class="{actived:$route.name == 'policy'}" to="/home/policy">政策法规</router-link>
-        </div> -->
+        </div>-->
         <div class="cell">
           <router-link :class="{actived:$route.name == 'check'}" to="/home/check">图像核对</router-link>
         </div>
@@ -66,7 +66,10 @@
       </keep-alive>
       <router-view v-if="!$route.meta.keepAlive" />
     </div>
-    <div class="footer"></div>
+    <div class="footer">
+      <div>版权所有：汝州市农业农村厅 汝州市综改办</div>
+      <div>技术支持：河南御之谷网络科技有限公司</div>
+    </div>
   </div>
 </template>
 <script>
@@ -77,7 +80,7 @@ export default {
   components: { swiper, swiperSlide },
   data() {
     return {
-      isShow:0,
+      isShow: 0,
       isFixed: false,
       offsetTop: 0,
       swiperOption: {
@@ -114,7 +117,6 @@ export default {
     });
   },
   methods: {
-    
     initHeight() {
       var scrollTop =
         window.pageYOffset ||
@@ -140,7 +142,6 @@ export default {
   .banner {
     width: 100%;
     height: 420px;
-    background: pink;
     position: relative;
     .wrapper /deep/ .swiper-pagination-bullet-active {
       background: #fff !important;
@@ -154,7 +155,7 @@ export default {
           width: 100%;
           .swiper-img {
             width: 100%;
-            height:100%;
+            height: 100%;
           }
         }
       }
@@ -226,8 +227,8 @@ export default {
           color: rgba(18, 18, 18, 1);
           margin: 0 35px;
         }
-        a:hover{
-          color:#FA970A;
+        a:hover {
+          color: #fa970a;
         }
         .actived {
           color: #015293;
@@ -244,10 +245,9 @@ export default {
           }
         }
       }
-      .wordColor{
-        color:red;
+      .wordColor {
+        color: red;
       }
-      
     }
   }
   .is_fixed {
@@ -263,6 +263,16 @@ export default {
     height: 248px;
     background: rgba(1, 82, 147, 1);
     margin-top: 57px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    div {
+      font-size: 18px;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 1);
+      line-height: 36px;
+    }
   }
 }
 </style>

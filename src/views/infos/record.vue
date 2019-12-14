@@ -2,18 +2,23 @@
   <div class="page">
     <div class="page-main">
       <div class="celled">
-        <div class="name">项目编号</div>
-        <div class="time">提交时间</div>
-        <div class="status">结果</div>
-        <div class="tool">操作</div>
+        <div class="num">项目编号</div>
+        <div class="name">项目名称</div>
+        <div class="much">费用金额</div>
+        <div class="type">费用类型</div>
+        <div class="status">状态</div>
+        <div class="way">付款方式</div>
+        <div class="tool"></div>
       </div>
-      <div class="cell" v-for="item in 8">
-        <div class="name">•成都农村产权交易所有限责任公司</div>
-        <div class="time">2019年12月12日</div>
-        <div class="status">成功</div>
+      <div class="cell" v-for="item in 8" @click="getRe">
+        <div class="num">121355</div>
+        <div class="name">成都农村产权交易所...</div>
+        <div class="much">0.00</div>
+        <div class="type">保证金</div>
+        <div class="status">已退回</div>
+        <div class="way">支付宝</div>
         <div class="tool">
-          <span class="look" @click="jumpPage(item)">查看</span>
-          <span @click="cancelTool(item)">删除</span>
+          <span>申诉</span>
         </div>
       </div>
       <div class="page-tion">
@@ -39,6 +44,17 @@ export default {
     };
   },
   methods: {
+    getRe() {
+      this.$alert("申诉内容", "标题名称", {
+        confirmButtonText: "确定",
+        callback: action => {
+          this.$message({
+            type: "info",
+            message: `action: ${action}`
+          });
+        }
+      });
+    },
     jumpPage(id) {
       this.$router.push({ path: "/info/edit", query: { id: id } });
     },
@@ -78,33 +94,6 @@ export default {
       width: 100%;
       text-align: center;
     }
-    .celled {
-      height: 74px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      background: rgba(126, 206, 244, 1);
-      div {
-        text-align: center;
-        font-size: 16px;
-        font-family: PingFang SC;
-        font-weight: 500;
-        color: #fff;
-      }
-      .name {
-        width: 40%;
-      }
-      .time {
-        width: 25%;
-      }
-      .status {
-        width: 15%;
-      }
-      .tool {
-        flex: 1;
-        text-align: center;
-      }
-    }
     .cell {
       height: 68px;
       display: flex;
@@ -117,43 +106,77 @@ export default {
       &:nth-child(odd) {
         background: #f0fbff;
       }
-      &:last-child {
-        border: none;
-      }
       div {
         text-align: center;
         font-size: 16px;
         font-family: PingFang SC;
         font-weight: 500;
-        color: rgba(102, 102, 102, 1);
+        color: rgba(18, 18, 18, 1);
+      }
+      .num {
+        width: 10%;
       }
       .name {
-        width: 40%;
+        width: 20%;
       }
-      .time {
-        width: 25%;
+      .much {
+        width: 20%;
+      }
+      .type {
+        width: 10%;
       }
       .status {
+        width: 10%;
+      }
+      .way {
         width: 15%;
       }
       .tool {
-        flex: 1;
+        width: 15%;
+
         span {
-          display: inline-block;
-          width: 70px;
-          height: 30px;
-          line-height: 30px;
-          background: rgba(126, 206, 244, 1);
+          padding: 5px 18px;
+          background: rgba(255, 191, 101, 1);
           border-radius: 5px;
           font-size: 14px;
-          font-family: PingFang SC;
           font-weight: 500;
           color: rgba(255, 255, 255, 1);
-          margin-right: 18px;
         }
-        .look {
-          background: rgba(255, 191, 101, 1);
-        }
+      }
+    }
+    .celled {
+      width: 100%;
+      height: 74px;
+      background: rgba(126, 206, 244, 1);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      div {
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 1);
+      }
+      .num {
+        width: 10%;
+      }
+      .name {
+        width: 20%;
+      }
+      .much {
+        width: 20%;
+      }
+      .type {
+        width: 10%;
+      }
+      .status {
+        width: 10%;
+      }
+      .way {
+        width: 15%;
+      }
+      .tool {
+        width: 15%;
       }
     }
   }

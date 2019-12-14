@@ -52,20 +52,22 @@
           <img src="../assets/home/new/down.png" alt />
         </div>
       </div>
-      <div class="right">
-      </div>
+      <div class="right"></div>
     </div>
     <div class="lists main-auto">
-      <div class="list-item">
-        <div> 项目编号</div>
-        <div>成交名称</div>
-        <div>成交日期</div>
+      <div class="list-itemed">
+        <div>项目编号</div>
+        <div>产权名称</div>
+        <div>交易地点</div>
+        <div></div>
       </div>
       <div class="list-item" v-for="item in 12">
         <div>23.00元</div>
         <div>彭州市三界方一村10组、11组...</div>
         <div>绵阳市江油市</div>
-        
+        <div>
+          <span @click="jumpTo('/projectDetail')">查看</span>
+        </div>
       </div>
     </div>
     <div class="page-size main-auto">
@@ -156,7 +158,7 @@ export default {
         font-family: PingFang SC;
         font-weight: bold;
         color: rgba(18, 18, 18, 1);
-        margin-right: 55px;
+        margin-right: 25px;
       }
       .cell {
         flex: 1;
@@ -264,12 +266,11 @@ export default {
       flex-direction: row;
       align-items: center;
       height: 68px;
-      &:nth-child(1) {
-        background: #7ecef4;
-        height: 68px;
-        font-size: 18px;
-        font-weight: bold;
-        color: rgba(255, 255, 255, 1);
+      &:nth-child(even) {
+        background: #fafafa;
+      }
+      &:nth-child(odd) {
+        background: #f0fbff;
       }
       div {
         text-align: center;
@@ -281,10 +282,63 @@ export default {
           width: 15%;
         }
         &:nth-child(2) {
-          width: 70%;
+          width: 50%;
         }
         &:nth-child(3) {
           width: 15%;
+        }
+        &:nth-child(4) {
+          width: 20%;
+          display: flex;
+          justify-content: center;
+          span {
+            width: 70px;
+            height: 30px;
+            line-height: 30px;
+            background: rgba(255, 191, 101, 1);
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 1);
+          }
+        }
+      }
+    }
+    .list-itemed {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 68px;
+      background: #7ecef4;
+      div {
+        text-align: center;
+        font-size: 16px;
+        font-family: PingFang SC;
+        font-weight: 500;
+        color: #fff;
+        &:nth-child(1) {
+          width: 15%;
+        }
+        &:nth-child(2) {
+          width: 50%;
+        }
+        &:nth-child(3) {
+          width: 15%;
+        }
+        &:nth-child(4) {
+          width: 20%;
+          display: flex;
+          justify-content: center;
+          span {
+            width: 70px;
+            height: 30px;
+            line-height: 30px;
+            background: rgba(255, 191, 101, 1);
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 1);
+          }
         }
       }
     }

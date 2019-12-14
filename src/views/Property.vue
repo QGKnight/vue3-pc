@@ -89,17 +89,19 @@
       </div>
     </div>
     <div class="lists main-auto" v-if="showFlag">
-      <div class="list-item">
+      <div class="list-itemed">
         <div>标的名称</div>
         <div>组织方</div>
         <div>当前价格</div>
         <div>竞价状态</div>
       </div>
-      <div class="list-item" v-for="item in 12">
-        <div>彭州市三界方一村10组、11组...</div>
-        <div>绵阳市江油市</div>
-        <div>23.00元</div>
-        <div>尚未开始</div>
+      <div class="list-mains">
+        <div class="list-item" v-for="item in 12">
+          <div>彭州市三界方一村10组、11组...</div>
+          <div>绵阳市江油市</div>
+          <div>23.00元</div>
+          <div>尚未开始</div>
+        </div>
       </div>
     </div>
     <div class="page-size main-auto">
@@ -173,7 +175,7 @@ export default {
   },
   methods: {
     jumpPage(id) {
-      this.$router.push({path:'/notice',query:{id:id}})
+      this.$router.push({ path: "/notice", query: { id: id } });
     },
     changeStatus(num) {
       if (this.statusIndex == num) {
@@ -239,6 +241,9 @@ export default {
       .el-button {
         background: #015293;
         color: #fff;
+        width:73px;
+        border-radius: 0 2px 2px 0;
+        height:40px;
       }
     }
   }
@@ -370,24 +375,52 @@ export default {
   }
   .lists {
     margin-top: 48px;
-    .list-item {
+    .list-mains {
+      .list-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 68px;
+        &:nth-child(even) {
+          background: #FAFAFA;
+        }
+        &:nth-child(odd) {
+          background: #F0FBFF;
+        }
+        div {
+          text-align: center;
+          font-size: 16px;
+          font-family: PingFang SC;
+          font-weight: 500;
+          color: rgba(18, 18, 18, 1);
+          &:nth-child(1) {
+            width: 40%;
+          }
+          &:nth-child(2) {
+            width: 25%;
+          }
+          &:nth-child(3) {
+            width: 15%;
+          }
+          &:nth-child(4) {
+            width: 20%;
+          }
+        }
+      }
+    }
+
+    .list-itemed {
+      background: #7ecef4;
       display: flex;
       flex-direction: row;
       align-items: center;
       height: 68px;
-      &:nth-child(1) {
-        background: #7ecef4;
-        height: 68px;
-        font-size: 18px;
-        font-weight: bold;
-        color: rgba(255, 255, 255, 1);
-      }
       div {
         text-align: center;
         font-size: 16px;
         font-family: PingFang SC;
         font-weight: 500;
-        color: rgba(18, 18, 18, 1);
+        color: #fff;
         &:nth-child(1) {
           width: 40%;
         }

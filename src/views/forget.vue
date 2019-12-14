@@ -22,7 +22,7 @@
           <el-input placeholder="请输入手机号码" v-model="loginUser.mobile" clearable></el-input>
         </div>
         <div class="cell celled">
-          <img src="../assets/auth/pass.png" alt />
+          <img src="../assets/home/new/vscode.png" alt />
           <el-input placeholder="请输入验证码" v-model="loginUser.smscode" clearable></el-input>
           <span>{{getCode}}</span>
         </div>
@@ -38,12 +38,15 @@
         <div class="btns">确 认</div>
       </div>
     </div>
+    <vfoot></vfoot>
   </div>
 </template>
 
 <script>
+import vfoot from "../components/foot";
 export default {
   name: "login",
+  components:{vfoot},
   data() {
     return {
       loginUser: {
