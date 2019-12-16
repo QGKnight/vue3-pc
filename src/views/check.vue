@@ -15,21 +15,21 @@
     </div>
     <div class="main-auto filter-box">
       <div class="items">
-        <div class="label">资产类别：</div>
+        <div class="label">项目类型：</div>
         <div class="cell">
-          <div v-for="item in 13">农村土地经营权</div>
+          <div v-for="(item,index) in claType" :key="index">{{item}}</div>
         </div>
       </div>
       <div class="items">
         <div class="label">面积（亩/平方米）：</div>
-        <div class="cell">
-          <div v-for="item in 13">10以下</div>
+        <div class="cell celled">
+          <div v-for="(item,index) in maxType" :key="index">{{item}}</div>
         </div>
       </div>
       <div class="items">
         <div class="label">所在地区：</div>
         <div class="cell">
-          <div v-for="item in 13">自贡市</div>
+          <div v-for="(item,index) in addTypes" :key="index">{{item}}</div>
         </div>
       </div>
     </div>
@@ -62,9 +62,9 @@
         <div></div>
       </div>
       <div class="list-item" v-for="item in 12">
-        <div>23.00元</div>
-        <div>彭州市三界方一村10组、11组...</div>
-        <div>绵阳市江油市</div>
+        <div>10110</div>
+        <div>汝州市市三界方一村10组、11组...</div>
+        <div>汝州市焦村镇</div>
         <div>
           <span @click="jumpTo('/projectDetail')">查看</span>
         </div>
@@ -91,7 +91,45 @@ export default {
       showFlag: false,
       number: "",
       word: "",
-      currentPage: 5
+      currentPage: 5,
+      claType: [
+        "全部",
+        "农村土地经营权",
+        "林地使用权",
+        "林业产业化项目",
+        "林产品",
+        "林木所有权",
+        "林木采伐权",
+        "集体经营性",
+        "建设用地使用权",
+        "水面养殖权",
+        "农业生产设施所有权",
+        "农村集体资产股权",
+        "四荒使用权",
+        "小型水利设施使用权",
+        "农村房屋租赁",
+        "其他农村项目"
+      ],
+      maxType: ["全部", "10以下", "10-100", "101-200", "201-500", "500以上"],
+      addTypes: [
+        "全部",
+        "寄料镇",
+        "蟒川镇",
+        "小屯镇",
+        "杨楼镇",
+        "王寨乡",
+        "纸坊镇",
+        "临汝镇",
+        "温泉镇",
+        "庙下镇",
+        "夏店镇 ",
+        "骑岭乡",
+        "汝州市",
+        "陵头镇 ",
+        "米店镇",
+        "焦村乡",
+        "大峪镇"
+      ]
     };
   },
   methods: {
@@ -168,8 +206,10 @@ export default {
         div {
           padding: 0 17px;
           margin-bottom: 29px;
+          font-family: PingFang SC;
         }
       }
+      
     }
   }
   .cond {
@@ -204,7 +244,7 @@ export default {
       }
       span {
         font-size: 16px;
-        // font-family: PingFang SC;
+        font-family: PingFang SC;
         font-weight: 500;
         color: rgba(1, 82, 147, 1);
       }

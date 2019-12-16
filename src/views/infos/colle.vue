@@ -7,7 +7,7 @@
         <div class="tool"></div>
       </div>
       <div class="cell" v-for="item in 8">
-        <div class="name">•成都农村产权交易所有限责任公司</div>
+        <div class="name">•汝州市农村产权交易所有限责任公司</div>
         <div class="time">2019-12-12</div>
         <div class="tool">
           <img src="../../assets/home/new/cang.png" alt />

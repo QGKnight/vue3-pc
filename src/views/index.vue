@@ -28,11 +28,11 @@
               <swiper :options="swiperOption">
                 <swiper-slide class="swiper-item">
                   <img src="../assets/home/new/33.png" alt />
-                  <div>省纪委调研灌南县“三资”管理农村产权交易工作1</div>
+                  <div>省纪委调研汝州市管理农村产权交易工作</div>
                 </swiper-slide>
                 <swiper-slide class="swiper-item">
                   <img src="../assets/home/new/44.png" alt />
-                  <div>省纪委调研灌南县“三资”管理农村产权交易工作2</div>
+                  <div>省纪委调研汝州市管理农村产权交易工作</div>
                 </swiper-slide>
               </swiper>
             </div>

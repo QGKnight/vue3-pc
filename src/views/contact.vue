@@ -7,15 +7,15 @@
       </div>
       <div class="box">
         <div class="cell">
-          <div class="left">江苏省信息中心</div>
+          <div class="left">汝州产权交易中心</div>
           <div class="right">025-26565323</div>
         </div>
         <div class="cell">
-          <div class="left">江苏省信息中心</div>
+          <div class="left">汝州产权交易中心</div>
           <div class="right">025-26565323</div>
         </div>
         <div class="cell">
-          <div class="left">江苏省信息中心</div>
+          <div class="left">汝州产权交易中心</div>
           <div class="right">025-26565323</div>
         </div>
       </div>

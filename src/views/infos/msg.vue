@@ -134,7 +134,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    // align-items: center;
+    align-items: center;
   }
   .cell {
     display: flex;

@@ -34,11 +34,18 @@ module.exports = {
     parallel: require('os').cpus().length > 1, // 构建时开启多进程处理babel编译
     pluginOptions: { // 第三方插件配置
     },
-    pwa: { 
+    pwa: {
+        iconPaths: {
+            favicon32: 'favicon.ico',
+            favicon16: 'favicon.ico',
+            appleTouchIcon: 'favicon.ico',
+            maskIcon: 'favicon.ico',
+            msTileImage: 'favicon.ico'
+        }
     },
     devServer: {
         open: true,
-        host: '192.168.0.150',
+        host: '192.168.0.141',
         port: 8080,
         https: false,
         hotOnly: false,

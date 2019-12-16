@@ -8,7 +8,7 @@
         <div class="tool">操作</div>
       </div>
       <div class="cell" v-for="item in 8">
-        <div class="name">•成都农村产权交易所有限责任公司</div>
+        <div class="name">•汝州市农村产权交易所有限责任公司</div>
         <div class="time">2019年12月12日</div>
         <div class="status">成功</div>
         <div class="tool">

@@ -80,7 +80,7 @@
       <div class="items" v-for="item in 12" @click="jumpPage(item)">
         <img src="../assets/home/new/tuxing.png" alt />
         <div class="msg-main">
-          <div class="title">彭州市生平镇泉村5组、6...</div>
+          <div class="title">汝州市生平镇泉村5组、6...</div>
           <div class="tips">当前价：---</div>
           <div class="tips">起始价：400.00元</div>
           <div class="tips">距开始：待定</div>
@@ -97,8 +97,8 @@
       </div>
       <div class="list-mains">
         <div class="list-item" v-for="item in 12">
-          <div>彭州市三界方一村10组、11组...</div>
-          <div>绵阳市江油市</div>
+          <div>汝州市三界方一村10组、11组...</div>
+          <div>汝州市焦村镇</div>
           <div>23.00元</div>
           <div>尚未开始</div>
         </div>
@@ -259,7 +259,7 @@ export default {
         font-family: PingFang SC;
         font-weight: bold;
         color: rgba(18, 18, 18, 1);
-        margin-right: 55px;
+        margin-right: 20px;
       }
       .cell {
         flex: 1;

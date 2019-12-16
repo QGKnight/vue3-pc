@@ -23,7 +23,7 @@
         <div class="cell" v-for="item in 7">
           <div class="left">
             <span class="num">1256326</span>
-            <span class="tip">成都农村产权交易所有限责任公司 交易服务费收费标准公告（试行）</span>
+            <span class="tip">汝州市农村产权交易所有限责任公司 交易服务费收费标准公告（试行）</span>
           </div>
           <div class="right">2019-12-11</div>
         </div>

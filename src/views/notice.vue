@@ -1,31 +1,29 @@
 <template>
   <div class="page">
     <vheader></vheader>
-    <div class="nav-top main-auto">当前位置：首页 > 交易公告 > 成交公告</div>
+    <div class="nav-top main-auto">当前位置：首页 > 产权信息 > 产权详情</div>
     <div class="notice-banner main-auto">
       <div class="warp">
         <swiper :options="swiperOption">
           <swiper-slide class="swiper-item">
             <img src="../assets/home/new/33.png" alt="">
-            <div>省纪委调研灌南县“三资”管理农村产权交易工作1</div>
           </swiper-slide>
           <swiper-slide class="swiper-item">
             <img src="../assets/home/new/44.png" alt="">
-            <div>省纪委调研灌南县“三资”管理农村产权交易工作2</div>
           </swiper-slide>
         </swiper>
       </div>
       <div class="msg">
-        <div class="msg-title">新庄镇陈墩村9.2亩土地流转（公共空间治理）</div>
+        <div class="msg-title">汝州市焦村镇9.2亩土地流转（公共空间治理）</div>
         <div class="msg-main">
           <div class="left">
-            <div class="cell">项目编号：313545132355554</div>
+            <div class="cell">项目编号：3135451323XXXXX</div>
             <div class="cell">产权类型：农户承包土地经营权</div>
             <div class="cell">流转方式：出租</div>
             <div class="cell">流转期限：1年</div>
-            <div class="cell">乡镇（街道）：新庄镇</div>
-            <div class="cell">村（社区）：陈墩村</div>
-            <div class="cell">组别：</div>
+            <div class="cell">乡镇（街道）：焦村镇</div>
+            <div class="cell">村（社区）：焦村</div>
+            <div class="cell">组别：无</div>
             <div class="cell">公示日期：2019-12-09</div>
           </div>
           <div class="right">
@@ -394,6 +392,7 @@ export default {
             font-weight: 500;
             color: rgba(18, 18, 18, 1);
             line-height: 38px;
+            font-family: PingFang SC;
           }
         }
         .right {

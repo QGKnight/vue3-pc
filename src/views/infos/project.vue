@@ -10,7 +10,7 @@
       </div>
       <div class="cell" v-for="item in 8">
         <div class="num">121355</div>
-        <div class="name">成都农村产权交易所...</div>
+        <div class="name">汝州市农村产权交易所...</div>
         <div class="status">已成交</div>
         <div class="much">0.00</div>
 
